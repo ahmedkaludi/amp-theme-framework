@@ -13,7 +13,7 @@ Class AMPClass extends AMPLoadClass{
 	}
 
 	public function AMPHead(){
-		 wp_register_script( 'AMP-script', 'https://cdn.ampproject.org/v0.js' );
+		wp_register_script( 'AMP-script', 'https://cdn.ampproject.org/v0.js' );
 	}
 
 	public function sigle(){

@@ -29,6 +29,7 @@ define('CI_VERSION', '3.1.0');
 	}
 	//Load MainClass
 	require_once(AMP_FRAMEWORK_DIR_PATH.'controllers/AMPLoadClass.php');
+	require_once(AMP_FRAMEWORK_DIR_PATH.'controllers/AMPComponentClass.php');
 	$e404 = FALSE;
 	//load default class
 	$class = 'AMPClass';
@@ -55,7 +56,7 @@ define('CI_VERSION', '3.1.0');
 		add_action( 'wp', 'rr_404_my_event' );
 	}
 
-	$AMPobj = new $class();
+	//$AMPobj = new $class();
 
 	// Single file
     if ( is_single() || is_page() ) {
@@ -79,3 +80,12 @@ define('CI_VERSION', '3.1.0');
         }
     }
 	//$AMPobj->$method();
+
+
+    $AMPComponentObj = new AMPComponentClass();
+	if(!function_exists('getComponent')){
+		function getComponent($componentName){
+			global $AMPComponentObj;
+			return $AMPComponentObj->loadComponents($componentName);
+		}
+	}
