@@ -12,7 +12,7 @@
          <a href="<?php echo esc_url( trailingslashit( $this->get( 'home_url' ) ).'?nonamp=1'); ?>">
         <?php }
      } ?>
-
+        <?php amp_search(); ?>
         <?php if (true == ($redux_builder_amp['opt-media']['url'])) {  ?>
         <?php if($redux_builder_amp['ampforwp-custom-logo-dimensions'] == true)  { ?>
              

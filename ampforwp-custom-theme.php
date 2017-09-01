@@ -1,9 +1,24 @@
 <?php
+/*
+Plugin Name: AMP Starter Theme
+Plugin URI: https://wordpress.org/plugins/accelerated-mobile-pages/
+Description: This is a custom AMP theme built to show how easy it is to make custom AMP themes.
+Version: 1.0
+Author:  Mohammed Kaludi, Ahmed Kaludi
+Author URI: http://ampforwp.com/themes
+License: GPL2
+*/
+
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Define the Folder of the theme.
 define('AMPFORWP_CUSTOM_THEME', plugin_dir_path( __FILE__ )); 
+require_once( AMPFORWP_CUSTOM_THEME . '/AMP-functions.php' );
+add_amp_theme_support('AMP-search');
+
+
+
 
 // Remove old files
 add_action('init','ampforwp_custom_theme_remove_old_files',11);
@@ -90,6 +105,3 @@ if( has_nav_menu( 'amp-menu' ) ) {
         $data['amp_component_scripts']['amp-accordion'] = 'https://cdn.ampproject.org/v0/amp-accordion-0.1.js';
     }
 }
-
-echo "sdcsd";die;
-amp_search();
