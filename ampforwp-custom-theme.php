@@ -1,6 +1,5 @@
 <?php
-
-/*// Exit if accessed directly.
+// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Define the Folder of the theme.
@@ -90,4 +89,7 @@ if( has_nav_menu( 'amp-menu' ) ) {
     if ( empty( $data['amp_component_scripts']['amp-accordion'] ) ) {
         $data['amp_component_scripts']['amp-accordion'] = 'https://cdn.ampproject.org/v0/amp-accordion-0.1.js';
     }
-}*/
+}
+
+echo "sdcsd";die;
+amp_search();

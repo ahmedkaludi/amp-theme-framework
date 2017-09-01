@@ -14,8 +14,8 @@ License: GPL1
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 define('AMP_FRAMEWORK_DIR_PATH', plugin_dir_path( __FILE__ ));
-define('AMP_FRAMEWORK_TEMPLATE_DIR_PATH', plugin_dir_path( __FILE__ )."/template");
 define('AMP_FRAMEWORK_COMOPNENT_DIR_PATH', plugin_dir_path( __FILE__ )."/components");
 
 
 require_once AMP_FRAMEWORK_DIR_PATH."/core/core.php";
+amp_search();
