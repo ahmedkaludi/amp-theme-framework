@@ -104,11 +104,11 @@ require_once( AMPFORWP_CUSTOM_THEME . '/template/style.php' );
 
 
 // Add Scripts only when AMP Menu is Enabled
-if( has_nav_menu( 'amp-menu' ) ) {
+/*if( has_nav_menu( 'amp-menu' ) ) {
     if ( empty( $data['amp_component_scripts']['amp-accordion'] ) ) {
         $data['amp_component_scripts']['amp-accordion'] = 'https://cdn.ampproject.org/v0/amp-accordion-0.1.js';
     }
-}
+}*/
 
 // Supported Components
 $supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons');

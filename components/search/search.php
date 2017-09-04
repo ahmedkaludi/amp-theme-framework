@@ -1,8 +1,4 @@
 <?php
-if(!isset($loadComponent['AMP-search']) ) {
-	return false;
-}
-
 //main output function
 function ampforwp_framework_get_search_form() {
 		global $redux_builder_amp;

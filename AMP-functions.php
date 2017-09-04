@@ -72,7 +72,7 @@ function amp_logo(){
 //Menus
 function amp_menu(){
 		global $loadComponent;
-		if(isset($loadComponent['AMP-search']) && $loadComponent['AMP-search']==true){
+		if(isset($loadComponent['AMP-menu']) && $loadComponent['AMP-menu']==true){
 			meue_html();
 		}
 	}
