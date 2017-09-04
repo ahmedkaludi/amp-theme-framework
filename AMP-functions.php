@@ -4,7 +4,10 @@ $scriptComponent = array();
 //$removeScriptComponent = array('amp-carousel');
 add_filter( 'amp_post_template_data', 'ampforwp_framework_add_and_form_scripts',20);
 function ampforwp_framework_add_and_form_scripts($data) {
-	global $scriptComponent; //$removeScriptComponent;
+	global $scriptComponent, $loadComponent; //$removeScriptComponent;
+	if(isset($loadComponent['AMP-search']) && $loadComponent['AMP-search']==true){
+		ampforwp_add_scripts();
+	}
 	if(count($scriptComponent)>0){
 		foreach ($scriptComponent as $key => $value) {
 			if ( empty( $data['amp_component_scripts'][$key] ) ) {
