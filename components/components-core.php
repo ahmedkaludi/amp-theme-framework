@@ -94,9 +94,9 @@ function amp_social_icons($social_icons=""){
 }
 
 //Sidebar
-function amp_sidebar($tag='start',$data=array(),$side="right"){
+function amp_sidebar($tag='start',$data=array()){
 	global $loadComponent;
 	if(isset($loadComponent['AMP-sidebar']) && $loadComponent['AMP-sidebar']==true){
-		ampforwp_framework_get_sideabr($tag,$data,$side);
+		ampforwp_framework_get_sideabr($tag,$data);
 	}
 }

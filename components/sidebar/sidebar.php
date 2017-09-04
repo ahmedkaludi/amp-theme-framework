@@ -1,9 +1,9 @@
 <?php
 if(!function_exists('ampforwp_framework_get_sideabr')){
-	function ampforwp_framework_get_sideabr($tag='start',$data=array(),$side="right"){
+	function ampforwp_framework_get_sideabr($tag='start',$data=array()){
 		switch(strtolower($tag)) {
 			case 'start':
-				echo sideber_begin($side,$data);
+				echo sideber_begin($data);
 				break;
 			case 'end':
 				echo sideber_end();
@@ -48,16 +48,16 @@ function sidebar_opening_button(){
 						</a>
 				</div>';
 }
-function sideber_begin($side="right",$data){
+function sideber_begin($data){
 	$attribute = '';
 	if(count($data)>0){
 		foreach ($data as $key => $value) {
 			$attribute .= $key.' = "'.$value.'" ' ;
 		}
 	}else{
-		$attribute = "id='sidebar' layout='nodisplay'";
+		$attribute = "id='sidebar' layout='nodisplay' side='right'";
 	}
-	return '<amp-sidebar '.$attribute.' side="'.$side.'">';
+	return '<amp-sidebar '.$attribute.'>';
 }
 
 function sideber_end(){

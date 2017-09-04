@@ -13,7 +13,10 @@
 </header>
 
 <!-- Navigation Menu Output Start -->  
-<?php amp_sidebar('start', array('id'=>'sidebar','layout'=>'nodisplay'),'right'); ?>
+<?php amp_sidebar('start', array(
+'id'=>'sidebar',
+'layout'=>'nodisplay',
+'side'=>'right')); ?>
     <div class="toggle-navigationv2">
       <?php amp_sidebar('button-close'); ?> 
       <?php if( has_nav_menu( 'amp-menu' ) ) { ?>
