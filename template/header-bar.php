@@ -5,22 +5,17 @@
 <?php amp_logo();   ?>
 <!-- Header Site Title and Logo End -->  
 
-<!-- Navigation Menu Icon Start -->  
-  <div on='tap:sidebar.toggle' role="button" tabindex="0" class="nav_container">
-      <a href="#" class="toggle-text">
-          <span></span>
-          <span></span>
-          <span></span>
-      </a>
-  </div>
+<!-- Navigation Menu Icon Start --> 
+  <?php amp_sidebar('button-open'); ?> 
+  
 <!-- Navigation Menu Icon End -->  
 
 </header>
 
 <!-- Navigation Menu Output Start -->  
-<amp-sidebar id='sidebar' layout="nodisplay" side="right">
+<?php amp_sidebar('start', array('id'=>'sidebar','layout'=>'nodisplay'),'right'); ?>
     <div class="toggle-navigationv2">
-      <div role="button" tabindex="0" on='tap:sidebar.close' class="close-nav">X</div>
+      <?php amp_sidebar('button-close'); ?> 
       <?php if( has_nav_menu( 'amp-menu' ) ) { ?>
         <div class="navigation_heading">
             <?php echo esc_html( $redux_builder_amp['amp-translator-navigate-text'] ); ?>
@@ -42,7 +37,7 @@
     </div>
     <?php amp_search();?>
     <?php amp_social_icons(); ?> 
-</amp-sidebar>
+<?php amp_sidebar('end'); ?>
 <!-- Navigation Menu Output End --> 
 <?php  
 //Example array

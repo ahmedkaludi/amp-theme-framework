@@ -8,3 +8,5 @@ add_amp_theme_support('AMP-logo');
 add_amp_theme_support('AMP-social-icons');
 //Menu
 add_amp_theme_support('AMP-menu');
+//Sidebar
+add_amp_theme_support('AMP-sidebar');

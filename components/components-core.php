@@ -1,7 +1,7 @@
 <?php
 $loadComponent = array();
 $scriptComponent = array();
-$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons');
+$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons','AMP-sidebar');
 //$removeScriptComponent = array('amp-carousel');
 add_filter( 'amp_post_template_data', 'ampforwp_framework_add_and_form_scripts',20);
 function ampforwp_framework_add_and_form_scripts($data) {
@@ -90,5 +90,13 @@ function amp_social_icons($social_icons=""){
 		}
 		else 
 		 ampforwp_framework_get_social_icons($amp_social_icons);
+	}
+}
+
+//Sidebar
+function amp_sidebar($tag='start',$data=array(),$side="right"){
+	global $loadComponent;
+	if(isset($loadComponent['AMP-sidebar']) && $loadComponent['AMP-sidebar']==true){
+		ampforwp_framework_get_sideabr($tag,$data,$side);
 	}
 }
