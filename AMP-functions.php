@@ -83,3 +83,11 @@ function amp_social_icons($social_icons=""){
 		 ampforwp_framework_get_social_icons($amp_social_icons);
 	}
 }
+
+//Menus
+function amp_menu(){
+		global $loadComponent;
+		if(isset($loadComponent['AMP-search']) && $loadComponent['AMP-search']==true){
+			meue_html();
+		}
+	}

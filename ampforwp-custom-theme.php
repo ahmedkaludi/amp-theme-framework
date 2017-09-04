@@ -119,3 +119,5 @@ add_amp_theme_support('AMP-search');
 add_amp_theme_support('AMP-logo');
 //Social Icons
 add_amp_theme_support('AMP-social-icons');
+//Menu
+add_amp_theme_support('AMP-menu');
