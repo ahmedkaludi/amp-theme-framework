@@ -1,50 +1,68 @@
 <?php 
+// Social Icons component
+function amp_social_icons($social_icons=""){
+	global $loadComponent;
+	$amp_social_icons = array();
+	//Supported social icons	 
+	$amp_social_icons = array('twitter','facebook','pinterest','google-plus','linkedin','youtube','instagram','reddit','VKontakte','snapchat','tumblr');
+	if(isset($loadComponent['AMP-social-icons']) && $loadComponent['AMP-social-icons']==true){
+		if($social_icons!=null){
+		 ampforwp_framework_get_social_icons($social_icons);
+		}
+		else 
+		 ampforwp_framework_get_social_icons($amp_social_icons);
+	}
+}
 function ampforwp_framework_get_social_icons($selected_social_icons){ 
-	global $redux_builder_amp; ?>
+	global $redux_builder_amp;
+	$social_icons_names = array();
+	foreach ($selected_social_icons as $key => $value) {
+	 	$social_icons_names[] = $key;
+	 } ?>	
 	<div class="social_icons">
 	     <ul>
-	        <?php if(in_array('twitter', $selected_social_icons)){ ?> 
-	        <a href="#" target ="_blank"><li class="icon-twitter"></li></a>
+	        <?php if(in_array('twitter', $social_icons_names)){ ?> 
+	        <a href="<?php echo $selected_social_icons['twitter']  ?>" target ="_blank"><li class="icon-twitter"></li></a>
 	        <?php } ?>
 
-	        <?php if(in_array('facebook', $selected_social_icons)){ ?>
-	        <a href="#" target ="_blank"><li class="icon-facebook"></li></a>
+	        <?php if(in_array('facebook', $social_icons_names)){ ?>
+	        <a href="<?php echo $selected_social_icons['facebook']  ?>" target ="_blank"><li class="icon-facebook"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('pinterest', $selected_social_icons)){ ?>
-	        <a href="#" target ="_blank"><li class="icon-pinterest"></li></a>
+	        <?php if(in_array('pinterest', $social_icons_names)){ ?>
+	        <a href="<?php echo $selected_social_icons['pinterest']  ?>" target ="_blank"><li class="icon-pinterest"></li></a>
 	        <?php } ?>
 
-	        <?php if(in_array('google-plus', $selected_social_icons)){ ?>
-	        <a href="#" target ="_blank"><li class="icon-google-plus"></li></a>
+	        <?php if(in_array('google-plus', $social_icons_names)){ ?>
+	        <a href="<?php echo $selected_social_icons['google-plus']  ?>" target ="_blank"><li class="icon-google-plus"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('linkedin', $selected_social_icons)){ ?>
-	        <a href="#" target ="_blank"><li class="icon-linkedin"></li></a>
+	        <?php if(in_array('linkedin', $social_icons_names)){ ?>
+	        <a href="<?php echo $selected_social_icons['linkedin']  ?>" target ="_blank"><li class="icon-linkedin"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('youtube', $selected_social_icons)){ ?>
-	        <a href="#" target ="_blank"><li class="icon-youtube-play"></li></a>
+	        <?php if(in_array('youtube', $social_icons_names)){ ?>
+	        <a href="<?php echo $selected_social_icons['youtube']  ?>" target ="_blank"><li class="icon-youtube-play"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('instagram', $selected_social_icons)){ ?>
-	        <a href="#" target ="_blank">  <li class="icon-instagram"></li></a>
+	        <?php if(in_array('instagram', $social_icons_names)){ ?>
+	        <a href="<?php echo $selected_social_icons['instagram']  ?>" target ="_blank">  <li class="icon-instagram"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('reddit', $selected_social_icons)){ ?> 
-	        <a href="#" target ="_blank"><li class="icon-reddit-alien"></li></a>
+	        <?php if(in_array('reddit', $social_icons_names)){ ?> 
+	        <a href="<?php echo $selected_social_icons['reddit']  ?>" target ="_blank"><li class="icon-reddit-alien"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('VKontakte', $selected_social_icons)){ ?>
-	        <a href="#" target ="_blank"><li class="icon-vk"></li></a>
+	        <?php if(in_array('VKontakte', $social_icons_names)){ ?>
+	        <a href="<?php echo $selected_social_icons['VKontakte']  ?>" target ="_blank"><li class="icon-vk"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('snapchat', $selected_social_icons)){ ?>
-	        <a href="#" target ="_blank"><li class="icon-snapchat-ghost"></li></a>
+	        <?php if(in_array('snapchat', $social_icons_names)){ ?>
+	        <a href="<?php echo $selected_social_icons['snapchat']  ?>" target ="_blank"><li class="icon-snapchat-ghost"></li></a>
 	        <?php } ?> 
 
- 			<?php if(in_array('tumblr', $selected_social_icons)){ ?>
-	        <a href="#" target ="_blank"><li class="icon-tumblr"></li></a>
+ 			<?php if(in_array('tumblr', $social_icons_names)){ ?>
+	        <a href="<?php echo $selected_social_icons['tumblr']  ?>" target ="_blank"><li class="icon-tumblr"></li></a>
 	        <?php } ?> 
 	        </ul>
 	  	</div>	

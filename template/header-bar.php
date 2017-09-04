@@ -43,8 +43,13 @@
     <?php amp_search();?>
     <?php amp_social_icons(); ?> 
 </amp-sidebar>
-<!-- Navigation Menu Output End -->  
-
+<!-- Navigation Menu Output End --> 
+<?php  
+//Example array
+$social = array(
+                'twitter' => 'https://www.twitter.com',
+                'facebook' => 'https://www.facebook.com'
+              );
+amp_social_icons($social); ?> 
 <div>
-
 <?php do_action('ampforwp_design_1_after_header');
