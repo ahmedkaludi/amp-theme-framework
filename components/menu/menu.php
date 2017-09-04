@@ -8,7 +8,7 @@ function meue_html(){
         ) );
 }
 
-//Load styling for social icons
+//Load styling for Menu
 add_action('amp_post_template_css','amp_menu_styles',11); 
 function amp_menu_styles(){ ?>
 	            /*Menu styles above*/

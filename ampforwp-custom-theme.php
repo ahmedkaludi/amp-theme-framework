@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 define('AMPFORWP_CUSTOM_THEME', plugin_dir_path( __FILE__ )); 
 define('AMP_FRAMEWORK_COMOPNENT_DIR_PATH', plugin_dir_path( __FILE__ )."/components"); 
 
+require_once( AMP_FRAMEWORK_COMOPNENT_DIR_PATH . '/components-core.php' );
 require_once( AMPFORWP_CUSTOM_THEME . '/AMP-functions.php' );
 
 // Remove old files
@@ -111,13 +112,4 @@ require_once( AMPFORWP_CUSTOM_THEME . '/template/style.php' );
 }*/
 
 // Supported Components
-$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons');
-// Loading the Components
-//Search
-add_amp_theme_support('AMP-search');
-//Logo
-add_amp_theme_support('AMP-logo');
-//Social Icons
-add_amp_theme_support('AMP-social-icons');
-//Menu
-add_amp_theme_support('AMP-menu');
+
