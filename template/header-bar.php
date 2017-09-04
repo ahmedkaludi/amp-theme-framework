@@ -3,26 +3,7 @@
 <div class="ampforwp-logo-area" >
       
 <!-- Header Site Title and Logo Start -->  
-    <?php if($redux_builder_amp['amp-on-off-support-for-non-amp-home-page']){ ?>
-         <a href="<?php echo esc_url( untrailingslashit( $this->get( 'home_url' ) ).'?nonamp=1'); ?>">
-    <?php } else { ?>
-        <?php if($redux_builder_amp['ampforwp-homepage-on-off-support']) { ?>
-         <a href="<?php echo esc_url( trailingslashit( $this->get( 'home_url' ) ) )  . AMP_QUERY_VAR; ?>">
-        <?php } else { ?>
-         <a href="<?php echo esc_url( trailingslashit( $this->get( 'home_url' ) ).'?nonamp=1'); ?>">
-        <?php }
-     } ?>
-        <?php if (true == ($redux_builder_amp['opt-media']['url'])) {  ?>
-        <?php if($redux_builder_amp['ampforwp-custom-logo-dimensions'] == true)  { ?>
-             
-            <amp-img src="<?php echo $redux_builder_amp['opt-media']['url']; ?>" width="<?php echo $redux_builder_amp['opt-media-width']; ?>" height="<?php echo $redux_builder_amp['opt-media-height']; ?>" alt="logo" class="amp-logo"></amp-img>
-             
-        <?php } else { ?>
-
-            <amp-img src="<?php echo $redux_builder_amp['opt-media']['url']; ?>" width="190" height="36" alt="logo" class="amp-logo"></amp-img>
-             
-         <?php } } else { echo esc_html( $this->get( 'blog_name' ) ); } ?>
-    </a>
+<?php amp_logo(); ?>       
 <!-- Header Site Title and Logo End -->  
 
 <!-- Navigation Menu Icon Start -->  
@@ -61,9 +42,10 @@
 
       } ?>
     </div>
+    <?php amp_search();?>
 </amp-sidebar>
 <!-- Navigation Menu Output End -->  
 
 <div>
-<?php amp_search();?>
+
 <?php do_action('ampforwp_design_1_after_header');

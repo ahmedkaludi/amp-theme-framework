@@ -26,15 +26,14 @@ function ampforwp_framework_add_and_form_scripts($data) {
 }
 
    
-   $supportComponent = array('AMP-search',
-   							'AMP-menu'
-   						);
 	function add_amp_theme_support($componentName){
 		global $loadComponent,$supportComponent;
-		if(in_array($componentName, $supportComponent)){
-			$loadComponent[$componentName] = true;
-			loadComponents($componentName);
-			return true;
+		if($supportComponent){
+			if(in_array($componentName, $supportComponent)){
+				$loadComponent[$componentName] = true;
+				loadComponents($componentName);
+				return true;
+			}
 		}
 		return false;
 	}
