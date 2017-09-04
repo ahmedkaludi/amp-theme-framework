@@ -6,6 +6,7 @@ if(!isset($loadComponent['AMP-search']) ) {
 //main output function
 function ampforwp_framework_get_search_form() {
 		global $redux_builder_amp;
+		ampforwp_add_scripts();
 		$action_url = '';
 		$label = ampforwp_translation(isset($redux_builder_amp['ampforwp-search-label']) && $redux_builder_amp['ampforwp-search-label'], 'Type your search query and hit enter');
 		$action_url = esc_url( get_bloginfo('url') );
@@ -25,7 +26,7 @@ function ampforwp_framework_get_search_form() {
 
 function ampforwp_add_scripts(){
 	global $scriptComponent;
-	if ( empty( $data['amp_component_scripts']['amp-form'] ) ) {
+	if ( empty( $scriptComponent['amp-form'] ) ) {
 			$scriptComponent['amp-form'] = 'https://cdn.ampproject.org/v0/amp-form-0.1.js';
 		}
 }

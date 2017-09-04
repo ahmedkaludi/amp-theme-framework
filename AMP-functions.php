@@ -8,7 +8,7 @@ function ampforwp_framework_add_and_form_scripts($data) {
 	if(count($scriptComponent)>0){
 		foreach ($scriptComponent as $key => $value) {
 			if ( empty( $data['amp_component_scripts'][$key] ) ) {
-				$data['amp_component_scripts']['$key'] = $value;
+				$data['amp_component_scripts'][$key] = $value;
 			}
 		}
 	}
@@ -55,6 +55,5 @@ function ampforwp_framework_add_and_form_scripts($data) {
 		global $loadComponent;
 		if(isset($loadComponent['AMP-search']) && $loadComponent['AMP-search']==true){
 			 ampforwp_framework_get_search_form();
-			 echo "sdcsd";
 		}
 	}
