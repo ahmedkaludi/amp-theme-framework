@@ -1,5 +1,5 @@
 <?php
-function amp_logo(){ 
+function ampforwp_framework_get_logo(){ 
   global $redux_builder_amp; ?>
 <div class="headerlogo">
   <?php 

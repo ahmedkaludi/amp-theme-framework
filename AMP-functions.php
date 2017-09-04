@@ -25,39 +25,46 @@ function ampforwp_framework_add_and_form_scripts($data) {
 	return $data;
 }
 
-   
-	function add_amp_theme_support($componentName){
-		global $loadComponent,$supportComponent;
-		if($supportComponent){
-			if(in_array($componentName, $supportComponent)){
-				$loadComponent[$componentName] = true;
-				loadComponents($componentName);
-				return true;
-			}
+//Component Loader
+function add_amp_theme_support($componentName){
+	global $loadComponent,$supportComponent;
+	if($supportComponent){
+		if(in_array($componentName, $supportComponent)){
+			$loadComponent[$componentName] = true;
+			loadComponents($componentName);
+			return true;
 		}
-		return false;
 	}
+	return false;
+}
+//Include the Component file
+function loadComponents($componentName){
+	if(empty($componentName)) return '';
+	$componentName = str_replace("AMP-", "", $componentName);
 
- 	function loadComponents($componentName){
-		if(empty($componentName)) return '';
-		$componentName = str_replace("AMP-", "", $componentName);
-
-		$file = AMP_FRAMEWORK_COMOPNENT_DIR_PATH.'/'.$componentName.'/'.$componentName.".php";
-		if(!file_exists($file)){
-			return '';
-		}
-		include_once($file);
+	$file = AMP_FRAMEWORK_COMOPNENT_DIR_PATH.'/'.$componentName.'/'.$componentName.".php";
+	if(!file_exists($file)){
+		return '';
 	}
+	include_once($file);
+}
 	
 /**
  * Component Functions
  **/
 
-
-	//Search Component Utilities
-	function amp_search(){
-		global $loadComponent;
-		if(isset($loadComponent['AMP-search']) && $loadComponent['AMP-search']==true){
-			 ampforwp_framework_get_search_form();
-		}
+//Search Component Utilities
+function amp_search(){
+	global $loadComponent;
+	if(isset($loadComponent['AMP-search']) && $loadComponent['AMP-search']==true){
+		 ampforwp_framework_get_search_form();
 	}
+}
+
+// Logo Component Utilitis
+function amp_logo(){
+	global $loadComponent;
+	if(isset($loadComponent['AMP-logo']) && $loadComponent['AMP-logo']==true){
+		 ampforwp_framework_get_logo();
+	}
+}

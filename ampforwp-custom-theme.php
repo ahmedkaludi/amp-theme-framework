@@ -111,7 +111,11 @@ if( has_nav_menu( 'amp-menu' ) ) {
 }
 
 // Supported Components
-$supportComponent = array('AMP-search','AMP-menu','AMP-logo');
+$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons');
 // Loading the Components
+//Search
 add_amp_theme_support('AMP-search');
+//Logo
 add_amp_theme_support('AMP-logo');
+//Social Icons
+//add_amp_theme_support('AMP-social-icons');
