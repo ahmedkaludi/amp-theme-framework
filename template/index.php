@@ -13,7 +13,6 @@ if ( is_home() || is_front_page()  || ( is_archive() && $redux_builder_amp['ampf
     $remove 	= '/'. AMP_QUERY_VAR;
     $amp_url 	= str_replace($remove, '', $amp_url) ;
 } ?>
-	<link rel="canonical" href="<?php echo $amp_url ?>">
 	
 	<?php do_action( 'amp_post_template_head', $this ); ?>
 	<style amp-custom>

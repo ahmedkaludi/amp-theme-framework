@@ -14,6 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Define the Folder of the theme.
 define('AMPFORWP_CUSTOM_THEME', plugin_dir_path( __FILE__ )); 
+define('AMP_FRAMEWORK_COMOPNENT_DIR_PATH', plugin_dir_path( __FILE__ )."/components"); 
 require_once( AMPFORWP_CUSTOM_THEME . '/AMP-functions.php' );
 add_amp_theme_support('AMP-search');
 
@@ -73,6 +74,12 @@ function ampforwp_designing_custom_template( $file, $type, $post ) {
             $file = AMPFORWP_CUSTOM_THEME . '/template/index.php';
         }
     }
+    // is_search
+	if ( is_search() ) {
+        if ( 'single' === $type ) {
+            $file = AMPFORWP_CUSTOM_THEME . '/template/search.php';
+        }
+    }
     
  	return $file;
 }
@@ -105,3 +112,7 @@ if( has_nav_menu( 'amp-menu' ) ) {
         $data['amp_component_scripts']['amp-accordion'] = 'https://cdn.ampproject.org/v0/amp-accordion-0.1.js';
     }
 }
+
+
+
+
