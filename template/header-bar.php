@@ -2,7 +2,7 @@
 <header id="#top" class="amp-wp-header">
      
 <!-- Header Site Title and Logo Start -->  
-<?php amp_logo(); ?>       
+<?php amp_logo();   ?>
 <!-- Header Site Title and Logo End -->  
 
 <!-- Navigation Menu Icon Start -->  
@@ -40,6 +40,7 @@
       } ?>
     </div>
     <?php amp_search();?>
+    <?php amp_social_icons(); ?> 
 </amp-sidebar>
 <!-- Navigation Menu Output End -->  
 
