@@ -1,7 +1,6 @@
 <?php global $redux_builder_amp; ?>
 <header id="#top" class="amp-wp-header">
-<div class="ampforwp-logo-area" >
-      
+     
 <!-- Header Site Title and Logo Start -->  
 <?php amp_logo(); ?>       
 <!-- Header Site Title and Logo End -->  
@@ -15,8 +14,6 @@
       </a>
   </div>
 <!-- Navigation Menu Icon End -->  
-
-</div>
 
 </header>
 
