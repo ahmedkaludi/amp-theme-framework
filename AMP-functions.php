@@ -23,7 +23,9 @@ function ampforwp_framework_add_and_form_scripts($data) {
 }
 
    
-   $supportComponent = array('AMP-search');
+   $supportComponent = array('AMP-search',
+   							'AMP-menu'
+   						);
 	function add_amp_theme_support($componentName){
 		global $loadComponent,$supportComponent;
 		if(in_array($componentName, $supportComponent)){
