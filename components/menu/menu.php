@@ -1,5 +1,5 @@
 <?php
-function meue_html(){
+function amp_menu_html(){
 	 wp_nav_menu( array(
             'theme_location' => 'amp-menu',
             'container'=>'aside',

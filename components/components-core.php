@@ -74,10 +74,10 @@ function amp_logo(){
 function amp_menu(){
 		global $loadComponent;
 		if(isset($loadComponent['AMP-menu']) && $loadComponent['AMP-menu']==true){
-			meue_html();
+			amp_menu_html();
 		}
 	}
-	
+
 // Social Icons component
 function amp_social_icons($social_icons=""){
 	global $loadComponent;
