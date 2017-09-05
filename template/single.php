@@ -74,7 +74,8 @@
 
 				</div>
 <!-- Article Content Ends -->  
-
+<!-- Author -->  
+<?php amp_author_box(); ?>
 <!-- Related Posts Start -->  
 				<div class="ampforwp-custom-related-post">
 					<?php $this->load_parts( array( 'ampforwp-related-posts' ) ); ?>
