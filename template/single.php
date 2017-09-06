@@ -21,20 +21,10 @@
 		<article class="amp-wp-article">
 			<?php do_action('ampforwp_post_before_design_elements') ?>
 
-<!-- Featured Image Starts -->  
 <?php amp_featured_image(); ?>
-<!-- Featured Image Ends -->  
 
-<!-- Social Sharing Starts -->  
-				<div class="amp-post-social-share">
-					<ul>
-						<li class="twitter"><a href="https://twitter.com/intent/tweet?status=<?php echo wp_kses_data( $this->get( 'post_title' ) ); ?> <?php echo wp_kses_data( get_permalink() ) . AMP_QUERY_VAR ; ?>">Tweet This</a></li> 
-						<li class="facebook"><a href="https://www.facebook.com/share.php?u=<?php echo wp_kses_data( get_permalink() ) . AMP_QUERY_VAR ; ?>&t=<?php echo $this->get( 'post_title' ); ?>">Share This</a></li>
-					</ul>					
-				</div>
-<!-- Social Sharing Ends -->  
+
             
-<!-- Article Content Starts -->  
 				<div class="amp-wp-article-content">
                     <?php do_action('ampforwp_inside_post_content_before'); 
 						$amp_custom_content_enable = get_post_meta( $this->get( 'post_id' ) , 'ampforwp_custom_content_editor_checkbox', true);
@@ -47,18 +37,19 @@
 							echo $this->get( 'ampforwp_amp_content' );
 						} 
 						
-					do_action('ampforwp_inside_post_content_after') ?>
+					do_action('ampforwp_inside_post_content_after');
+                    // AD Slot #4
+                    do_action('ampforwp_after_post_content'); ?>
 
 				</div>
-<!-- Article Content Ends -->  
-<!-- Author -->  
-<?php amp_author_box(); 
-amp_social(array('twitter'));
-amp_categories_list();
-amp_tags_list();
-amp_comments();
-amp_post_navigation();
-amp_related_posts();
+<?php
+    amp_author_box(); 
+    amp_social(array('twitter'));
+    amp_categories_list();
+    amp_tags_list();
+    amp_comments();
+    amp_post_navigation();
+    amp_related_posts();
 ?>
  
  
