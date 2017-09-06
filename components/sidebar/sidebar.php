@@ -4,7 +4,9 @@ if(!function_exists('ampforwp_framework_get_sideabr')){
 		if(!isset($data['action'])){
 			echo 'action not found';
 		}
-		switch(strtolower($data['action'])) {
+		$action = $data['action'];
+		unset($data['action']);
+		switch(strtolower($action)) {
 			case 'start':
 				echo sideber_begin($data);
 				break;
@@ -23,7 +25,7 @@ if(!function_exists('ampforwp_framework_get_sideabr')){
 		}
 	}
 }
-function sidebar_close_button(){
+function sidebar_close_button($data=array() ){
 	$id = 'sidebar';
 	$class = 'amp-sidebar-close';
 	if(isset($data['id'])){
@@ -34,7 +36,7 @@ function sidebar_close_button(){
 	}
 	return '<div role="button" tabindex="0" on="tap:'.$id.'.close" class="'.$class.'">X</div>';
 }
-function sidebar_opening_button(){
+function sidebar_opening_button($data=array()){
 	$id = 'sidebar';
 	$class = 'amp-sidebar-button';
 	if(isset($data['id'])){
@@ -51,7 +53,7 @@ function sidebar_opening_button(){
 						</a>
 				</div>';
 }
-function sideber_begin($data){
+function sideber_begin($data=array()){
 	$attribute = '';
 	if(count($data)>0){
 		foreach ($data as $key => $value) {

@@ -38,9 +38,6 @@ function call_loops_standard($data=array()){
 			'has_password' 		  => false ,
 			'post_status'		  => 'publish'
 		);
-		if(isset($data['posts_per_page'])){
-			$args['posts_per_page'] = $data['posts_per_page'];
-		}
 		$filtered_args = apply_filters('ampforwp_query_args', $args);
 		$amp_q = new WP_Query( $filtered_args );
 	}
@@ -55,9 +52,6 @@ function call_loops_standard($data=array()){
 			'has_password'		  => false ,
 			'post_status'		  => 'publish'
 		);
-		if(isset($data['posts_per_page'])){
-			$args['posts_per_page'] = $data['posts_per_page'];
-		}
 		$filtered_args = apply_filters('ampforwp_query_args', $args);
 		$amp_q = new WP_Query( $filtered_args );
 	}
@@ -72,9 +66,6 @@ function call_loops_standard($data=array()){
 			'has_password' 		  => false ,
 			'post_status'		  => 'publish'
 		);
-		if(isset($data['posts_per_page'])){
-			$args['posts_per_page'] = $data['posts_per_page'];
-		}
 		$amp_q = new WP_Query( $args );
 	}
 
