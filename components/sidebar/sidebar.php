@@ -22,7 +22,7 @@ if(!function_exists('ampforwp_framework_get_sideabr')){
 }
 function sidebar_close_button(){
 	$id = 'sidebar';
-	$class = 'close-nav';
+	$class = 'amp-sidebar-close';
 	if(isset($data['id'])){
 		$id = $data['id'];
 	}
@@ -33,7 +33,7 @@ function sidebar_close_button(){
 }
 function sidebar_opening_button(){
 	$id = 'sidebar';
-	$class = 'nav_container';
+	$class = 'amp-sidebar-button';
 	if(isset($data['id'])){
 		$id = $data['id'];
 	}
