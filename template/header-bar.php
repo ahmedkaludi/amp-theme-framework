@@ -1,18 +1,20 @@
 <?php global $redux_builder_amp; ?>
-<header id="#top" class="amp-wp-header">
-     
-<!-- Header Site Title and Logo Start -->  
+<header id="#top" class="amp-header">
+    
 <?php amp_logo(); ?>
+<<<<<<< HEAD
+<?php amp_sidebar('button-open'); ?> 
+=======
 <!-- Header Site Title and Logo End -->  
 <?php  amp_call_now(); ?>
 <!-- Navigation Menu Icon Start --> 
   <?php amp_sidebar('button-open'); ?> 
   
 <!-- Navigation Menu Icon End -->  
+>>>>>>> origin/master
 
 </header>
 
-<!-- Navigation Menu Output Start -->  
 <?php amp_sidebar('start',
                     array(
                         'id'=>'sidebar',
@@ -21,10 +23,8 @@
                     ) 
                  ); 
 ?>
-    <div class="toggle-navigationv2">
-      <?php amp_sidebar('button-close'); ?> 
-      <?php amp_menu(); ?>
-    </div>
+    <?php amp_sidebar('button-close'); ?> 
+    <?php amp_menu(); ?>
     <?php amp_search();?>
     <?php amp_social_icons(); ?> 
 <?php amp_sidebar('end'); ?>
@@ -43,4 +43,3 @@ amp_social_icons(
   ); 
 ?> 
 <div>
-<?php do_action('ampforwp_design_1_after_header');

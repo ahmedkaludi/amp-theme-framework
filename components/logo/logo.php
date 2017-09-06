@@ -1,7 +1,7 @@
 <?php
 function ampforwp_framework_get_logo(){ 
   global $redux_builder_amp; ?>
-<div class="headerlogo">
+<div class="amp-logo">
   <?php 
         do_action('ampforwp_header_top_design3');
         $set_rel_to_noamp=false;
