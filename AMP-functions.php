@@ -12,3 +12,4 @@ add_amp_theme_support('AMP-menu');
 add_amp_theme_support('AMP-sidebar');
 add_amp_theme_support('AMP-featured-image');
 add_amp_theme_support('AMP-author-box');
+add_amp_theme_support('AMP-loop');

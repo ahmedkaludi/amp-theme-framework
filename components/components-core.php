@@ -1,7 +1,8 @@
 <?php
 $loadComponent = array();
 $scriptComponent = array();
-$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box');
+global $wpdb;
+$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box','AMP-loop');
 //$removeScriptComponent = array('amp-carousel');
 add_filter( 'amp_post_template_data', 'ampforwp_framework_add_and_form_scripts',20);
 function ampforwp_framework_add_and_form_scripts($data) {
@@ -28,6 +29,7 @@ function ampforwp_framework_add_and_form_scripts($data) {
 
 //Component Loader
 function add_amp_theme_support($componentName){
+	global $wpdb;
 	global $loadComponent,$supportComponent;
 	if($supportComponent){
 		if(in_array($componentName, $supportComponent)){
@@ -40,6 +42,7 @@ function add_amp_theme_support($componentName){
 }
 //Include the Component file
 function loadComponents($componentName){
+	global $wpdb;
 	if(empty($componentName)) return '';
 	$componentName = str_replace("AMP-", "", $componentName);
 

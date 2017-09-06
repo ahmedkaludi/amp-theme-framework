@@ -34,7 +34,7 @@
 <main>
 	<?php do_action('ampforwp_post_before_loop') ?>
 	<?php
-		if ( get_query_var( 'paged' ) ) {
+		/*if ( get_query_var( 'paged' ) ) {
 	        $paged = get_query_var('paged');
 	    } elseif ( get_query_var( 'page' ) ) {
 	        $paged = get_query_var('page');
@@ -51,11 +51,17 @@
 			'post__not_in' 		  => $exclude_ids,
 			'has_password' 		  => false ,
 			'post_status'		  => 'publish'
-		) ); ?>
+		) );*/ ?>
 
+		<?php while(amp_loop('start')): ?>
+				<?php amp_loop_image(); ?>
+				<?php amp_loop_title() ?>
+				<?php amp_loop_excerpt(); ?>
+				<?php amp_loop_date(); ?>
+			<?php amp_loop('end'); ?> 
+		<?php endwhile; ?>
 
-
-     <?php global $redux_builder_amp; ?>
+     <?php /*global $redux_builder_amp; ?>
  		<h3 class="amp-wp-content page-title"><?php echo ampforwp_translation( $redux_builder_amp['amp-translator-search-text'], 'You searched for:') . '  ' . get_search_query();?>  </h3>
 
 	<?php if ( $q->have_posts() ) : while ( $q->have_posts() ) : $q->the_post();
@@ -89,7 +95,10 @@
 				?>
 		        <p><?php echo wp_trim_words( strip_shortcodes( $content ) , '15' ); ?></p>
                 <div class="featured_time"><?php 
-                	$post_date =  human_time_diff( get_the_time('U', get_the_ID() ), current_time('timestamp') ) .' '. ampforwp_translation( $redux_builder_amp['amp-translator-ago-date-text'],'ago' );
+                	$post_date =  human_time_diff( 
+                						get_the_time('U', get_the_ID() ), 
+                						current_time('timestamp') ) .' '. ampforwp_translation( $redux_builder_amp['amp-translator-ago-date-text'],
+                						'ago' );
                     $post_date = apply_filters('ampforwp_modify_post_date',$post_date);
                     echo  $post_date ; ?>
                   </div>
@@ -117,7 +126,7 @@
  		</div>
 
 	<?php endif; ?>
-	<?php wp_reset_postdata(); ?>
+	<?php wp_reset_postdata();*/ ?>
 	<?php do_action('ampforwp_post_after_loop') ?>
 </main>
 <?php do_action( 'amp_post_template_above_footer', $this ); ?>
