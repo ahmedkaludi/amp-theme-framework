@@ -75,7 +75,9 @@
 				</div>
 <!-- Article Content Ends -->  
 <!-- Author -->  
-<?php amp_author_box(); ?>
+<?php amp_author_box(); 
+amp_social_icons(array('twitter'));
+?>
 <!-- Related Posts Start -->  
 				<div class="ampforwp-custom-related-post">
 					<?php $this->load_parts( array( 'ampforwp-related-posts' ) ); ?>

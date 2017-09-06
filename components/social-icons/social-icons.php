@@ -1,60 +1,108 @@
 <?php 
 function ampforwp_framework_get_social_icons($selected_social_icons){ 
-	global $redux_builder_amp;
-	$social_icons_names = array();
+
+	/* TODO: 1: Connect with options panel
+	2: Add icons for email, line and whatsapp
+	*/
+	global $post;
+	$post_id = $post->ID;
+	$desc = $post->post_excerpt; 
+	 if (has_post_thumbnail( $post_id ) ){
+	 	$thumb_id = get_post_thumbnail_id($post_id);
+		$image = wp_get_attachment_image_src( $thumb_id, 'full' ); 
+	 }
+ 	$social_icons_names = array();
+	$url = get_the_permalink();
+	$title = get_the_title();
+
 	foreach ($selected_social_icons as $key => $value) {
-	 	$social_icons_names[] = $key;
-	 } ?>	
+	 	$social_icons_names[] = $key;	 
+	 } 
+	 if($selected_social_icons['twitter'] == null){
+	 	$selected_social_icons['twitter'] = 'https://twitter.com/intent/tweet?url='. $url.'&text='. $title .' ';
+	 	//https://twitter.com/intent/tweet?url={url}&text={title}&via={via}&hashtags={hashtags}
+	 }
+	 if($selected_social_icons['facebook'] == null){
+	 	$selected_social_icons['facebook'] = 'https://www.facebook.com/sharer.php?u='. $url. '';
+	 	//or https://www.facebook.com/dialog/share?app_id={app_id}&display=page&href={url}&redirect_uri={redirect_url}
+	 }
+	 if($selected_social_icons['pinterest'] == null){
+	 	$selected_social_icons['pinterest'] = 'https://pinterest.com/pin/create/bookmarklet/?media='.$image.' &url='. $url.'&description='. $title .'';
+	 	//https://pinterest.com/pin/create/bookmarklet/?media={img}&url={url}&is_video={is_video}&description={title}
+	 }
+	 if($selected_social_icons['google-plus'] == null){
+	 	$selected_social_icons['google-plus'] = 'https://plus.google.com/share?url='. $url. '';
+	 	//https://plus.google.com/share?url={url}
+	 }
+	 if($selected_social_icons['linkedin'] == null){
+	 	$selected_social_icons['linkedin'] = 'https://www.linkedin.com/shareArticle?url='. $url. '&title='. $title .'';
+	 	//https://www.linkedin.com/shareArticle?url={url}&title={title}
+	 }
+
+	 if($selected_social_icons['reddit'] == null){
+	 	$selected_social_icons['reddit'] = 'https://reddit.com/submit?url='. $url. '&title='. $title .'';
+	 	//https://reddit.com/submit?url={url}&title={title}
+	 }
+	 if($selected_social_icons['VKontakte'] == null){
+	 	$selected_social_icons['VKontakte'] = 'http://vk.com/share.php?url='. $url. '';
+	 	//http://vk.com/share.php?url={url}
+	 }
+	 
+	 if($selected_social_icons['tumblr'] == null){
+	 	$selected_social_icons['tumblr'] = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl='. $url. '&title='. $title .'&caption='.$desc.'';
+	 	//https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}&title={title}&caption={desc}
+	 }
+ 
+	 	 ?>	
 	<div class="social_icons">
 	     <ul>
-	        <?php if(in_array('twitter', $social_icons_names)){ ?> 
+	        <?php if( in_array( 'twitter' , $selected_social_icons,true)  || in_array('twitter', $social_icons_names,true)  ) { ?> 
 	        <a href="<?php echo $selected_social_icons['twitter']  ?>" target ="_blank"><li class="icon-twitter"></li></a>
 	        <?php } ?>
 
-	        <?php if(in_array('facebook', $social_icons_names)){ ?>
+	        <?php if( in_array('facebook', $selected_social_icons,true) || in_array('facebook', $social_icons_names,true)) { ?>
 	        <a href="<?php echo $selected_social_icons['facebook']  ?>" target ="_blank"><li class="icon-facebook"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('pinterest', $social_icons_names)){ ?>
+	        <?php if( in_array( 'pinterest' , $selected_social_icons,true ) || in_array( 'pinterest', $social_icons_names,true ) ) { ?>
 	        <a href="<?php echo $selected_social_icons['pinterest']  ?>" target ="_blank"><li class="icon-pinterest"></li></a>
 	        <?php } ?>
 
-	        <?php if(in_array('google-plus', $social_icons_names)){ ?>
+	        <?php if( in_array( 'google-plus' , $selected_social_icons,true ) || in_array( 'google-plus' , $social_icons_names,true ) ) { ?>
 	        <a href="<?php echo $selected_social_icons['google-plus']  ?>" target ="_blank"><li class="icon-google-plus"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('linkedin', $social_icons_names)){ ?>
+	        <?php if( in_array( 'linkedin' , $selected_social_icons,true ) || in_array( 'linkedin' , $social_icons_names,true ) ) { ?>
 	        <a href="<?php echo $selected_social_icons['linkedin']  ?>" target ="_blank"><li class="icon-linkedin"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('youtube', $social_icons_names)){ ?>
+	        <?php if( in_array( 'youtube' , $selected_social_icons,true ) || in_array( 'youtube' , $social_icons_names,true ) ) { ?>
 	        <a href="<?php echo $selected_social_icons['youtube']  ?>" target ="_blank"><li class="icon-youtube-play"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('instagram', $social_icons_names)){ ?>
+	        <?php if( in_array( 'instagram' , $selected_social_icons,true ) || in_array( 'instagram' , $social_icons_names,true ) ) { ?>
 	        <a href="<?php echo $selected_social_icons['instagram']  ?>" target ="_blank">  <li class="icon-instagram"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('reddit', $social_icons_names)){ ?> 
+	        <?php if( in_array( 'reddit' , $selected_social_icons,true ) || in_array( 'reddit' , $social_icons_names,true ) ) { ?> 
 	        <a href="<?php echo $selected_social_icons['reddit']  ?>" target ="_blank"><li class="icon-reddit-alien"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('VKontakte', $social_icons_names)){ ?>
+	        <?php if( in_array( 'VKontakte' , $selected_social_icons,true ) || in_array( 'VKontakte' , $social_icons_names,true ) ) { ?>
 	        <a href="<?php echo $selected_social_icons['VKontakte']  ?>" target ="_blank"><li class="icon-vk"></li></a>
 	        <?php } ?> 
 
-	        <?php if(in_array('snapchat', $social_icons_names)){ ?>
+	        <?php if( in_array( 'snapchat' , $selected_social_icons,true ) || in_array( 'snapchat' , $social_icons_names,true ) ) { ?>
 	        <a href="<?php echo $selected_social_icons['snapchat']  ?>" target ="_blank"><li class="icon-snapchat-ghost"></li></a>
 	        <?php } ?> 
 
- 			<?php if(in_array('tumblr', $social_icons_names)){ ?>
+ 			<?php if( in_array( 'tumblr' , $selected_social_icons,true ) || in_array( 'tumblr' , $social_icons_names,true ) ) { ?>
 	        <a href="<?php echo $selected_social_icons['tumblr']  ?>" target ="_blank"><li class="icon-tumblr"></li></a>
 	        <?php } ?> 
 	        </ul>
 	  	</div>	
 <?php 
 }
-
 //Load styling for social icons
 add_action('amp_post_template_css','amp_social_icons_styles',11); 
 function amp_social_icons_styles(){ ?>

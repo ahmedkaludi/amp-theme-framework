@@ -45,9 +45,15 @@
 <?php  
 //Example array
 $social = array(
-                'twitter' => 'https://www.twitter.com',
-                'facebook' => 'https://www.facebook.com'
+                'twitter' => 'https://www.twitter.com/marqas36',
+                'facebook' => 'https://www.facebook.com '
               );
-amp_social_icons($social); ?> 
+amp_social_icons(
+  array(
+                'twitter' => 'https://www.twitter.com/marqas36',
+                'facebook' => 'https://www.facebook.com '
+       )
+  ); 
+?> 
 <div>
 <?php do_action('ampforwp_design_1_after_header');
