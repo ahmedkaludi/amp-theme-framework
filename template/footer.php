@@ -10,3 +10,5 @@
   </div>
 </footer>
 <?php do_action('ampforwp_global_after_footer'); ?>
+<?php // AD slot #2
+do_action('amp_post_template_above_footer');?>
