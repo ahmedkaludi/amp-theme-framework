@@ -8,6 +8,8 @@ add_amp_theme_support('AMP-logo');
 add_amp_theme_support('AMP-social-icons');
 //Menu
 add_amp_theme_support('AMP-menu');
+//Call Now
+add_amp_theme_support('AMP-call-now');
 //Sidebar
 add_amp_theme_support('AMP-sidebar');
 // Featured Image

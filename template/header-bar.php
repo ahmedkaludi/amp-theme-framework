@@ -4,7 +4,7 @@
 <!-- Header Site Title and Logo Start -->  
 <?php amp_logo(); ?>
 <!-- Header Site Title and Logo End -->  
-
+<?php  amp_call_now(); ?>
 <!-- Navigation Menu Icon Start --> 
   <?php amp_sidebar('button-open'); ?> 
   

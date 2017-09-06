@@ -919,6 +919,11 @@ function ampforwp_custom_style() {
         }
     }
 
+<?php global $redux_builder_amp; if ($redux_builder_amp['ampforwp-callnow-button']) { ?>
+.callnow{ position: relative; top: -37px; right: 39px }
+.callnow a:before { content: ""; position: absolute; right: 23px; width: 4px; height: 8px; border-width: 6px 0 6px 3px; border-style: solid; border-color:<?php echo $redux_builder_amp['amp-opt-color-rgba-colorscheme-call']['color']; ?>; background: transparent; transform: rotate(-30deg); box-sizing: initial; border-top-left-radius: 3px 5px; border-bottom-left-radius: 3px 5px; }
+<?php } ?>
+
 
 
 
