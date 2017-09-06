@@ -24,3 +24,5 @@ add_amp_theme_support('AMP-categories-tags');
 add_amp_theme_support('AMP-comments');
 //Post Navigation
 add_amp_theme_support('AMP-post-navigation');
+// Related Posts
+add_amp_theme_support('AMP-related-posts');
