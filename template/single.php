@@ -31,11 +31,13 @@
 
 						// Normal Front Page Content
 						if ( ! $amp_custom_content_enable ) {
-							echo $this->get( 'post_amp_content' ); // amphtml content; no kses
+							$ampforwp_the_content = $this->get( 'post_amp_content' ); // amphtml content; no kses
 						} else {
 							// Custom/Alternative AMP content added through post meta  
-							echo $this->get( 'ampforwp_amp_content' );
+							$ampforwp_the_content = $this->get( 'ampforwp_amp_content' );
 						} 
+						$ampforwp_the_content = apply_filters('ampforwp_content_filter',$ampforwp_the_content);
+						echo $ampforwp_the_content;
 						
 					do_action('ampforwp_inside_post_content_after');
                     // AD Slot #4
@@ -43,6 +45,7 @@
 
 				</div>
 <?php
+amp_post_pagination();
     amp_author_box(); 
     amp_social(array('twitter'));
     amp_categories_list();
