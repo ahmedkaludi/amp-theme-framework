@@ -2,7 +2,16 @@
 <header id="#top" class="amp-header">
     
 <?php amp_logo(); ?>
+<<<<<<< HEAD
 <?php amp_sidebar('button-open'); ?> 
+=======
+<!-- Header Site Title and Logo End -->  
+<?php  amp_call_now(); ?>
+<!-- Navigation Menu Icon Start --> 
+  <?php amp_sidebar('button-open'); ?> 
+  
+<!-- Navigation Menu Icon End -->  
+>>>>>>> origin/master
 
 </header>
 

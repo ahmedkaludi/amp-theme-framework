@@ -30,15 +30,18 @@ if ( is_home() || is_front_page()  || ( is_archive() && $redux_builder_amp['ampf
 <?php do_action('ampforwp_post_before_design_elements') ?>
 
 <!-- Loop Starts -->  
+<<<<<<< HEAD
 	<?php call_loops_standered($data);
+=======
+	<?php 
+>>>>>>> origin/master
 	 while(amp_loop('start')): ?>
 			<?php amp_loop_image(); ?>
 			<?php amp_loop_title(); ?>
 			<?php amp_loop_excerpt(); ?>
 			<?php amp_loop_category(); ?>
 			<?php amp_loop_date(); ?>
-		<?php amp_loop('end'); ?> 
-	<?php endwhile;  ?>
+		<?php amp_loop('end'); endwhile;  ?>
 	<?php amp_pagination(); ?>
 
 
