@@ -1,15 +1,12 @@
 <?php
 $loadComponent = array();
 $scriptComponent = array();
-global $wpdb;
 $supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box','AMP-loop','AMP-categories-tags','AMP-comments');
 //$removeScriptComponent = array('amp-carousel');
 add_filter( 'amp_post_template_data', 'ampforwp_framework_add_and_form_scripts',20);
 function ampforwp_framework_add_and_form_scripts($data) {
 	global $scriptComponent, $loadComponent; //$removeScriptComponent;
-	if(isset($loadComponent['AMP-search']) && $loadComponent['AMP-search']==true){
-		ampforwp_add_scripts();
-	}
+	
 	if(count($scriptComponent)>0){
 		foreach ($scriptComponent as $key => $value) {
 			if ( empty( $data['amp_component_scripts'][$key] ) ) {

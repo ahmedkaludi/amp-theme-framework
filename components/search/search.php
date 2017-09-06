@@ -18,7 +18,7 @@ function ampforwp_framework_get_search_form() {
 	    echo $form;		
 	    
 }
-
+ampforwp_add_scripts();
 function ampforwp_add_scripts(){
 	global $scriptComponent;
 	if ( empty( $scriptComponent['amp-form'] ) ) {

@@ -51,15 +51,22 @@
 			'post__not_in' 		  => $exclude_ids,
 			'has_password' 		  => false ,
 			'post_status'		  => 'publish'
-		) );*/ ?>
+		) );*/ 
+		//echo amp_loop('start');die;
+		?>
 
-		<?php while(amp_loop('start')): ?>
-				<?php amp_loop_image(); ?>
-				<?php amp_loop_title() ?>
-				<?php amp_loop_excerpt(); ?>
-				<?php amp_loop_date(); ?>
-			<?php amp_loop('end'); ?> 
-		<?php endwhile; ?>
+		<?php 
+	//$data['posts_per_page'] = 2;
+	call_loops_standered($data);
+	 while(amp_loop('start')): ?>
+			<?php amp_loop_image(); ?>
+			<?php amp_loop_title(); ?>
+			<?php amp_loop_excerpt(); ?>
+			<?php amp_loop_category(); ?>
+			<?php amp_loop_date(); ?>
+		<?php amp_loop('end'); ?> 
+	<?php endwhile;  ?>
+	<?php amp_pagination(); ?>
 
      <?php /*global $redux_builder_amp; ?>
  		<h3 class="amp-wp-content page-title"><?php echo ampforwp_translation( $redux_builder_amp['amp-translator-search-text'], 'You searched for:') . '  ' . get_search_query();?>  </h3>

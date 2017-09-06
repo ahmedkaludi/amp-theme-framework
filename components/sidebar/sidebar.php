@@ -63,10 +63,10 @@ function sideber_begin($data){
 function sideber_end(){
 	return '</amp-sidebar>';
 }
-
+ampforwp_add_sidebar_scripts();
 function ampforwp_add_sidebar_scripts(){
 	global $scriptComponent;
-	if ( empty( $scriptComponent['amp-form'] ) ) {
-			$scriptComponent['amp-form'] = 'https://cdn.ampproject.org/v0/amp-sidebar-0.1.js';
+	if ( empty( $scriptComponent['amp-sidebar'] ) ) {
+			$scriptComponent['amp-sidebar'] = 'https://cdn.ampproject.org/v0/amp-sidebar-0.1.js';
 		}
 }

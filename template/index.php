@@ -30,8 +30,23 @@ if ( is_home() || is_front_page()  || ( is_archive() && $redux_builder_amp['ampf
 <?php do_action('ampforwp_post_before_design_elements') ?>
 
 <!-- Loop Starts -->  
+	<?php 
+	//$data['posts_per_page'] = 2;
+	call_loops_standered($data);
+	 while(amp_loop('start')): ?>
+			<?php amp_loop_image(); ?>
+			<?php amp_loop_title(); ?>
+			<?php amp_loop_excerpt(); ?>
+			<?php amp_loop_category(); ?>
+			<?php amp_loop_date(); ?>
+		<?php amp_loop('end'); ?> 
+	<?php endwhile;  ?>
+	<?php amp_pagination(); ?>
+
+
+
 		<?php
-			if ( get_query_var( 'paged' ) ) {
+			/*if ( get_query_var( 'paged' ) ) {
 		        $paged = get_query_var('paged');
 		    } elseif ( get_query_var( 'page' ) ) {
 		        $paged = get_query_var('page');
@@ -98,7 +113,7 @@ if ( is_home() || is_front_page()  || ( is_archive() && $redux_builder_amp['ampf
 		    </div>
 <!-- Pagination Ends -->  
 
-		<?php endif; ?>
+		<?php endif;*/ ?>
 
 </div>
 
