@@ -1,6 +1,21 @@
 <?php
+function amp_page_title(){
+	global $redux_builder_amp;
+	if ( is_archive() ) {
+	    the_archive_title( '<h3 class="archive-page-title">', '</h3>' );
+	    the_archive_description( '<div class="taxonomy-description">', '</div>' );
+	}
+	if(is_search()){
+		$label = 'You searched for:';
+		if(function_exists('ampforwp_translation')){
+			$label = ampforwp_translation( $redux_builder_amp['amp-translator-search-text'], 'You searched for:');
+		}
+		echo '<h3 class="amp-wp-content page-title">'.$label . '  ' . get_search_query().'</h3>';
+	}
+}
+
 $amp_q ='';
-function call_loops_standered($data){
+function call_loops_standard($data=array()){
 	global $amp_q;
 	if (get_query_var( 'paged' ) ) {
 	    $paged = get_query_var('paged');
@@ -77,6 +92,9 @@ function call_loops_standered($data){
 	
 	function amp_loop($selection,$data=array()){
 		global $amp_q;
+		if(empty($amp_q) || is_null($amp_q)){
+			call_loops_standard();
+		}
 		if ( !isset($ampLoopData['no_data']) ) :
 			switch($selection){
 				case 'start':
@@ -96,17 +114,9 @@ function call_loops_standered($data){
 		$post_status = $amp_q->have_posts();
 		$amp_q->the_post();
 		return $post_status;
-		/*global $ampLoopData,$counterOffset;
-		if($counterOffset==count($ampLoopData)-1 && $counterOffset<=count($ampLoopData)-1){
-			return true;
-		}
-		return false;*/
 	}
 	function amp_end_loop(){
 		wp_reset_postdata();
-		/*global $ampLoopData, $counterOffset;
-		$counterOffset++;*/
-		
 	}
 
 	function amp_pagination(){
