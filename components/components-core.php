@@ -2,7 +2,7 @@
 $loadComponent = array();
 $scriptComponent = array();
 global $wpdb;
-$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box','AMP-loop','AMP-categories-tags');
+$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box','AMP-loop','AMP-categories-tags','AMP-comments');
 //$removeScriptComponent = array('amp-carousel');
 add_filter( 'amp_post_template_data', 'ampforwp_framework_add_and_form_scripts',20);
 function ampforwp_framework_add_and_form_scripts($data) {
@@ -132,5 +132,13 @@ function amp_tags_list( ){
 	global $loadComponent;
 	if(isset($loadComponent['AMP-categories-tags']) && $loadComponent['AMP-categories-tags']==true){
 		ampforwp_framework_get_tags_list( );
+	}
+}
+
+// Comments
+function amp_comments( ){
+	global $loadComponent;
+	if(isset($loadComponent['AMP-comments']) && $loadComponent['AMP-comments']==true){
+		ampforwp_framework_get_comments( );
 	}
 }

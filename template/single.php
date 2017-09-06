@@ -79,6 +79,7 @@
 amp_social_icons(array('twitter'));
 amp_categories_list();
 amp_tags_list();
+amp_comments();
 ?>
 <!-- Related Posts Start -->  
 				<div class="ampforwp-custom-related-post">

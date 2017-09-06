@@ -14,3 +14,4 @@ add_amp_theme_support('AMP-featured-image');
 add_amp_theme_support('AMP-author-box');
 add_amp_theme_support('AMP-loop');
 add_amp_theme_support('AMP-categories-tags');
+add_amp_theme_support('AMP-comments');
