@@ -77,6 +77,8 @@
 <!-- Author -->  
 <?php amp_author_box(); 
 amp_social_icons(array('twitter'));
+amp_categories_list();
+amp_tags_list();
 ?>
 <!-- Related Posts Start -->  
 				<div class="ampforwp-custom-related-post">

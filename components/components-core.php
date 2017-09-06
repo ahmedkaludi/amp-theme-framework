@@ -2,7 +2,7 @@
 $loadComponent = array();
 $scriptComponent = array();
 global $wpdb;
-$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box','AMP-loop');
+$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box','AMP-loop','AMP-categories-tags');
 //$removeScriptComponent = array('amp-carousel');
 add_filter( 'amp_post_template_data', 'ampforwp_framework_add_and_form_scripts',20);
 function ampforwp_framework_add_and_form_scripts($data) {
@@ -117,5 +117,20 @@ function amp_author_box( $author_url="" ){
 	global $loadComponent;
 	if(isset($loadComponent['AMP-author-box']) && $loadComponent['AMP-author-box']==true){
 		ampforwp_framework_get_author_box($author_url );
+	}
+}
+
+// Categories List
+function amp_categories_list( ){
+	global $loadComponent;
+	if(isset($loadComponent['AMP-categories-tags']) && $loadComponent['AMP-categories-tags']==true){
+		ampforwp_framework_get_categories_list( );
+	}
+}
+// Tags List
+function amp_tags_list( ){
+	global $loadComponent;
+	if(isset($loadComponent['AMP-categories-tags']) && $loadComponent['AMP-categories-tags']==true){
+		ampforwp_framework_get_tags_list( );
 	}
 }
