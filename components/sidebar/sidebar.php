@@ -52,7 +52,7 @@ function sideber_begin($data){
 	$attribute = '';
 	if(count($data)>0){
 		foreach ($data as $key => $value) {
-			$attribute .= $key.' = "'.$value.'" ' ;
+			$attribute .= $key.'="'.$value.'" ' ;
 		}
 	}else{
 		$attribute = "id='sidebar' layout='nodisplay' side='right'";

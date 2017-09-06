@@ -6,18 +6,10 @@ function ampforwp_custom_style() {
 /********************************************
     AMP BAREBONES CORE STYLESHEET 
 *********************************************/
-    /* Generic WP styling */
-    .alignright {
-        float: right;
-    }
-    .alignleft {
-        float: left;
-    }
-    .aligncenter {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+/* Standard Framework Stylesheet */
+.hidden{ display:none }
+
+/* Generic WP styling */
     .amp-wp-enforced-sizes {
         max-width: 100%;
         margin: 0 auto;
@@ -59,17 +51,17 @@ function ampforwp_custom_style() {
     blockquote p:last-child {
         margin-bottom: 0;
     }
-    /* UI Fonts */
-    .amp-wp-meta,
-    .amp-wp-header div,
-    .amp-wp-title,
-    .wp-caption-text,
-    .amp-wp-tax-category,
-    .amp-wp-tax-tag,
-    .amp-wp-comments-link,
-    .amp-wp-footer p,
-    .back-to-top {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+    /* Image Alignment */
+    .alignright {
+        float: right;
+    }
+    .alignleft {
+        float: left;
+    }
+    .aligncenter {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     /* Header */
     .amp-wp-header {
@@ -540,30 +532,6 @@ function ampforwp_custom_style() {
         color: #333;
         margin-left: 11px;
     }
-	/*.toggle-navigationv2 ul {
-	    list-style-type: none;
-	    margin: 0;
-        font-family:sans-serif;
-	    padding: 0;
-	}
-    .toggle-navigationv2 ul h6{
-        padding:10px;
-        text-decoration:none
-    }
-	.toggle-navigationv2 ul ul li a  {
-	    padding-left: 35px;
-	    background: #fff;
-	    display: inline-block
-	}
-	.toggle-navigationv2 ul li a{
-        padding: 10px 15px 10px 25px;
-        width: 88%;
-        display: inline-block;
-        text-decoration: none;
-        background: #fafafa;
-        font-size: 13px;
-        border-bottom: 1px solid #efefef;
-	}*/
 	.close-nav{
 	    font-size: 12px;
         font-family: sans-serif;

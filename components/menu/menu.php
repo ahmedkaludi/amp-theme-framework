@@ -1,11 +1,13 @@
 <?php
 function amp_menu_html(){
-	 wp_nav_menu( array(
+if( has_nav_menu( 'amp-menu' ) ) {
+    wp_nav_menu( array(
             'theme_location' => 'amp-menu',
             'container'=>'aside',
             'menu'=>'ul',
             'menu_class'=>'nav nav--vertical',
         ) );
+}
 }
 
 //Load styling for Menu
