@@ -1,7 +1,10 @@
 <?php
 if(!function_exists('ampforwp_framework_get_sideabr')){
-	function ampforwp_framework_get_sideabr($tag='start',$data=array()){
-		switch(strtolower($tag)) {
+	function ampforwp_framework_get_sideabr($data=array()){
+		if(!isset($data['action'])){
+			echo 'action not found';
+		}
+		switch(strtolower($data['action'])) {
 			case 'start':
 				echo sideber_begin($data);
 				break;
@@ -15,7 +18,7 @@ if(!function_exists('ampforwp_framework_get_sideabr')){
 				echo sidebar_close_button($data);
 				break;
 			default:
-				echo 'tag not found';
+				echo 'action not found';
 				break;
 		}
 	}

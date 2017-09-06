@@ -2,24 +2,23 @@
 <header id="#top" class="amp-header">
     
 <?php amp_logo(); ?>
-<?php amp_sidebar('button-open'); ?> 
+<?php amp_sidebar(['action'=>'button-open']); ?> 
 <?php // amp_call_now(); ?>
 
 </header>
 
-<?php amp_sidebar('start',
-                    array(
-                        'id'=>'sidebar',
-                        'layout'=>'nodisplay',
-                        'side'=>'right'
-                    ) 
+<?php amp_sidebar(['action'=>'start',
+                  'id'=>'sidebar',
+                  'layout'=>'nodisplay',
+                  'side'=>'right'
+                  ] 
                  ); 
 ?>
-    <?php amp_sidebar('button-close'); ?> 
+    <?php amp_sidebar(['action'=>'button-close']); ?> 
     <?php amp_menu(); ?>
     <?php amp_search();?>
     <?php amp_social_icons(); ?> 
-<?php amp_sidebar('end'); ?>
+<?php amp_sidebar(['action'=>'end']); ?>
 
 <?php  
 //Example array
