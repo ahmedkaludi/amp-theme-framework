@@ -54,7 +54,7 @@ function ampforwp_framework_get_social_icons($selected_social_icons){
 	 }
  
 	 	 ?>	
-	<div class="social_icons">
+	<div class="amp-social">
 	     <ul>
 	        <?php if( in_array( 'twitter' , $selected_social_icons,true)  || in_array('twitter', $social_icons_names,true)  ) { ?> 
 	        <a href="<?php echo $selected_social_icons['twitter']  ?>" target ="_blank"><li class="icon-twitter"></li></a>
@@ -104,8 +104,8 @@ function ampforwp_framework_get_social_icons($selected_social_icons){
 <?php 
 }
 //Load styling for social icons
-add_action('amp_post_template_css','amp_social_icons_styles',11); 
-function amp_social_icons_styles(){ ?>
+add_action('amp_post_template_css','amp_social_styles',11); 
+function amp_social_styles(){ ?>
 
 /* Social icons */
 @font-face {
@@ -139,9 +139,9 @@ function amp_social_icons_styles(){ ?>
 .icon-whatsapp:before{ content: "\f232";background:#075e54 }
 .icon-reddit-alien:before{ content: "\f281";background:#ff4500 }
 .icon-snapchat-ghost:before{ content: "\f2ac"; background:#fffc00 }
-.social_icons{ font-size: 15px; display: inline-block; }
-.social_icons ul{ list-style-type:none; padding:0;margin:0; text-align:center }
-.social_icons li{ box-sizing: initial; display:inline-block; margin:5px; }
-.social_icons li:before{ box-sizing: initial; color:#fff; padding: 10px; display: inline-block; border-radius: 70px; width: 18px; height: 18px; line-height: 20px; text-align: center; }
+.amp-social{ font-size: 15px; display: inline-block; }
+.amp-social ul{ list-style-type:none; padding:0;margin:0; text-align:center }
+.amp-social li{ box-sizing: initial; display:inline-block; margin:5px; }
+.amp-social li:before{ box-sizing: initial; color:#fff; padding: 10px; display: inline-block; border-radius: 70px; width: 18px; height: 18px; line-height: 20px; text-align: center; }
 
 <?php }

@@ -16,16 +16,11 @@
     <?php amp_sidebar(['action'=>'close-button']); ?> 
     <?php amp_menu(); ?>
     <?php amp_search();?>
-    <?php amp_social_icons(); ?> 
+    <?php amp_social(); ?> 
 <?php amp_sidebar(['action'=>'end']); ?>
 
-<?php  
-//Example array
-amp_social_icons(
-  array(
-                'twitter' => 'https://www.twitter.com/marqas36',
-                'facebook' => 'https://www.facebook.com '
-       )
-  ); 
-?> 
+<?php amp_social([
+    'twitter' => 'https://www.twitter.com/marqas36',
+    'facebook' => 'https://www.facebook.com'
+    ]);?> 
 <div>

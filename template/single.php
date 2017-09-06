@@ -53,7 +53,7 @@
 <!-- Article Content Ends -->  
 <!-- Author -->  
 <?php amp_author_box(); 
-amp_social_icons(array('twitter'));
+amp_social(array('twitter'));
 amp_categories_list();
 amp_tags_list();
 amp_comments();

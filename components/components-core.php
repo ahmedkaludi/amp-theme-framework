@@ -79,17 +79,17 @@ function amp_menu(){
 	}
 
 // Social Icons component
-function amp_social_icons($social_icons=""){
+function amp_social($social_icons=""){
 	global $loadComponent;
-	$amp_social_icons = array();
+	$amp_social = array();
 	//Supported social icons	 
-	$amp_social_icons = array('twitter','facebook','pinterest','google-plus','linkedin','youtube','instagram','reddit','VKontakte','snapchat','tumblr');
+	$amp_social = array('twitter','facebook','pinterest','google-plus','linkedin','youtube','instagram','reddit','VKontakte','snapchat','tumblr');
 	if(isset($loadComponent['AMP-social-icons']) && $loadComponent['AMP-social-icons']==true){
 		if($social_icons!=null){
 		 ampforwp_framework_get_social_icons($social_icons);
 		}
 		else 
-		 ampforwp_framework_get_social_icons($amp_social_icons);
+		 ampforwp_framework_get_social_icons($amp_social);
 	}
 }
 
