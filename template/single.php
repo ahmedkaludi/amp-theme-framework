@@ -23,7 +23,6 @@
 
 <!-- Featured Image Starts -->  
 <?php amp_featured_image(); ?>
-				 
 <!-- Featured Image Ends -->  
 
 <!-- Social Sharing Starts -->  

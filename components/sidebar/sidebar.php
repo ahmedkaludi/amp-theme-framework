@@ -13,10 +13,10 @@ if(!function_exists('ampforwp_framework_get_sideabr')){
 			case 'end':
 				echo sideber_end();
 				break;
-			case 'button-open':
+			case 'open-button':
 				echo sidebar_opening_button($data);
 				break;
-			case 'button-close':
+			case 'close-button':
 				echo sidebar_close_button($data);
 				break;
 			default:

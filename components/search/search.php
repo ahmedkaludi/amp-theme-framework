@@ -7,12 +7,12 @@ function ampforwp_framework_get_search_form() {
 		$action_url = esc_url( get_bloginfo('url') );
 		$action_url = preg_replace('#^http?:#', '', $action_url);
 		$placeholder = ampforwp_translation($redux_builder_amp['ampforwp-search-placeholder'], 'Type Here' );
-	  $form = '<form role="search" method="get" id="searchform" class="searchform" target="_top" action="' . $action_url  .'">
-				<div>
+	  $form = '<form role="search" method="get" id="amp-search" class="amp-search" target="_top" action="' . $action_url  .'">
+				<div class="amp-search-wrapper">
 					<label class="screen-reader-text" for="s">' . $label . '</label>
 					<input type="text" placeholder="AMP" value="1" name="amp" class="hidden"/>
 					<input type="text" placeholder="'.$placeholder.'" value="' . get_search_query() . '" name="s" id="s" />
-					<input type="submit" id="searchsubmit" value="'. esc_attr_x( 'Search', 'submit button' ) .'" />
+					<input type="submit" id="amp-search-submit" value="'. esc_attr_x( 'Search', 'submit button' ) .'" />
 				</div>
 				</form>';
 	    echo $form;		

@@ -159,12 +159,6 @@ function ampforwp_custom_style() {
     .wp-caption {
         padding: 0;
     }
-    .wp-caption.alignleft {
-        margin-right: 16px;
-    }
-    .wp-caption.alignright {
-        margin-left: 16px;
-    }
     .wp-caption-text {
         font-size: 12px;
         line-height: 1.5em;
@@ -173,9 +167,6 @@ function ampforwp_custom_style() {
         text-align: center;
     }
     /* AMP Media */
-    amp-carousel {
-        margin: 0 -16px 1.5em;
-    }
     amp-iframe,
     amp-youtube,
     amp-instagram,
@@ -835,18 +826,6 @@ function ampforwp_custom_style() {
             font-size: 12px;
         }
     }
-
-<?php global $redux_builder_amp; if ($redux_builder_amp['ampforwp-callnow-button']) { ?>
-.callnow{ position: relative; top: -37px; right: 39px }
-.callnow a:before { content: ""; position: absolute; right: 23px; width: 4px; height: 8px; border-width: 6px 0 6px 3px; border-style: solid; border-color:<?php echo $redux_builder_amp['amp-opt-color-rgba-colorscheme-call']['color']; ?>; background: transparent; transform: rotate(-30deg); box-sizing: initial; border-top-left-radius: 3px 5px; border-bottom-left-radius: 3px 5px; }
-<?php } ?>
-
-
-
-
-
-
-
 
 
 
