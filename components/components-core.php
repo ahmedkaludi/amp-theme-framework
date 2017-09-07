@@ -1,7 +1,7 @@
 <?php
 $loadComponent = array();
 $scriptComponent = array();
-$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-title','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box','AMP-loop','AMP-categories-tags','AMP-comments','AMP-post-navigation','AMP-related-posts','AMP-post-pagination','AMP-call-now');
+$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box','AMP-loop','AMP-categories-tags','AMP-comments','AMP-post-navigation','AMP-related-posts','AMP-post-pagination','AMP-call-now');
 //$removeScriptComponent = array('amp-carousel');
 add_filter( 'amp_post_template_data', 'ampforwp_framework_add_and_form_scripts',20);
 function ampforwp_framework_add_and_form_scripts($data) {
@@ -72,10 +72,25 @@ function amp_logo(){
 
 // Title
 function amp_title(){
-	global $loadComponent;
-	if(isset($loadComponent['AMP-title']) && $loadComponent['AMP-title']==true){
-		 echo ampforwp_framework_get_the_title();
+		global $redux_builder_amp, $post;
+	$ID = '';
+	if(is_home() && $redux_builder_amp['amp-frontpage-select-option'] == 1){
+		if( $redux_builder_amp['ampforwp-title-on-front-page'] ) {
+			$ID = $redux_builder_amp['amp-frontpage-select-option-pages'];
+		}
 	}
+	else
+		$ID = $post->ID;
+	if( $ID!=null ){
+		do_action('ampforwp_above_the_title',$this); ?>
+			<h1 class="amp-post-title"> <?php 
+				$ampforwp_title = get_the_title($ID);
+				$ampforwp_title =  apply_filters('ampforwp_filter_single_title', $ampforwp_title);
+				echo wp_kses_data( $ampforwp_title ); ?>
+			</h1>
+        <?php do_action('ampforwp_below_the_title',$this); ?>
+<?php
+    }
 }
 
 
