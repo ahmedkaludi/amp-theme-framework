@@ -1,32 +1,6 @@
 <!-- amp_header(START); -->
 <?php global $redux_builder_amp;  ?>
-<!doctype html>
-<html amp <?php echo AMP_HTML_Utils::build_attributes_string( $this->get( 'html_tag_attributes' ) ); ?>>
-<head>
-<meta charset="utf-8">
-
-<!-- __START__ IF GOOGLE FONT IS AVAILABLE THEN LOAD __START__ -->
-    <link rel="dns-prefetch" href="https://cdn.ampproject.org">
-<!-- __END__ IF GOOGLE FONT IS AVAILABLE THEN LOAD __END__ -->
-
-<?php global $redux_builder_amp;
-if ( is_home() || is_front_page()  || ( is_archive() && $redux_builder_amp['ampforwp-archive-support'] ) ){
-    global $wp;
-    $current_archive_url = home_url( $wp->request );
-    $amp_url 	= trailingslashit($current_archive_url);
-    $remove 	= '/'. AMP_QUERY_VAR;
-    $amp_url 	= str_replace($remove, '', $amp_url) ;
-} ?>
-
-	<?php do_action( 'amp_post_template_head', $this ); ?>
-
-    <style amp-custom>
-		<?php $this->load_parts( array( 'style' ) ); ?>
-		<?php do_action( 'amp_post_template_css', $this ); ?>
-	</style>
-
-</head>
-<body class="amp-index <?php echo esc_attr( $this->get( 'body_class' ) ); ?>">
+<?php amp_header(); ?>
 <!-- amp_header(END); -->
     
 <?php $this->load_parts( array( 'header-bar' ) ); ?>
