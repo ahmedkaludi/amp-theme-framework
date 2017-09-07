@@ -1,14 +1,14 @@
 <?php global $redux_builder_amp;  ?>
 <?php amp_header(); ?>
 	<main>
-		<article class="amp-wp-article">
+		<article>
 			<?php do_action('ampforwp_post_before_design_elements') ?>
 <?php amp_title(); ?>
 <?php amp_featured_image(); ?>
 
 
             
-				<div class="amp-wp-article-content">
+				<div>
                     <?php do_action('ampforwp_inside_post_content_before'); 
 						$amp_custom_content_enable = get_post_meta( $this->get( 'post_id' ) , 'ampforwp_custom_content_editor_checkbox', true);
 

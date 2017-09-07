@@ -2,15 +2,15 @@
 function amp_page_title(){
 	global $redux_builder_amp;
 	if ( is_archive() ) {
-	    the_archive_title( '<h3 class="archive-page-title">', '</h3>' );
-	    the_archive_description( '<div class="taxonomy-description">', '</div>' );
+	    the_archive_title( '<h3 class="amp-archive-title">', '</h3>' );
+	    the_archive_description( '<div class="amp-archive-desc">', '</div>' );
 	}
 	if(is_search()){
 		$label = 'You searched for:';
 		if(function_exists('ampforwp_translation')){
 			$label = ampforwp_translation( $redux_builder_amp['amp-translator-search-text'], 'You searched for:');
 		}
-		echo '<h3 class="amp-wp-content page-title">'.$label . '  ' . get_search_query().'</h3>';
+		echo '<h3 class="amp-loop-label">'.$label . '  ' . get_search_query().'</h3>';
 	}
 }
 
@@ -140,7 +140,7 @@ function call_loops_standard($data=array()){
 		if(isset($data['tag']) && $data['tag']!=""){
 			$tag = $data['tag'];
 		}
-		$attributes = 'class="amp-wp-title"';
+		$attributes = 'class="amp-loop-title"';
 		if(isset($data['attributes']) && $data['attributes']!=""){
 			$attributes = $data['attributes'];
 		}
