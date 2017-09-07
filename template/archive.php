@@ -18,15 +18,5 @@
 		<?php amp_loop('end'); endwhile;  ?>
 	<?php amp_pagination(); ?>
 
-
-
-
-
-
-
-
 </div>
-
-<?php $this->load_parts( array( 'footer' ) ); ?>
-
-<?php do_action( 'amp_post_template_footer', $this ); ?>
+<?php amp_footer()?>

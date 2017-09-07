@@ -239,3 +239,14 @@ function amp_header(){
 		<body class="<?php echo $bodyClass; ?>">
 <?php
 }
+
+function amp_footer(){
+	$post_id = get_queried_object_id();
+	$thisTemplate = new AMP_Post_Template($post_id);
+	
+	do_action( 'amp_post_template_above_footer', $thisTemplate );
+	$thisTemplate->load_parts( array( 'footer' ) );
+	do_action( 'amp_post_template_footer', $thisTemplate );
+	?></body>
+	</html><?php
+}
