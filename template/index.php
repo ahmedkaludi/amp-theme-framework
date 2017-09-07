@@ -1,4 +1,4 @@
-<?php amp_header_core(); ?>
+<?php amp_header(); ?>
 
 <?php do_action('ampforwp_post_before_design_elements') ?>
     

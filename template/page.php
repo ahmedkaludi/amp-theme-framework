@@ -1,5 +1,5 @@
 <?php
- amp_header_core();  
+ amp_header();  
   amp_title();  
 	amp_featured_image();
 	amp_content();

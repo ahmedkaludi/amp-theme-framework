@@ -182,7 +182,7 @@ function amp_call_now(){
 }
 
 //Get Core of AMP HTML
-function amp_header_core(){
+function amp_header(){
 	$post_id = get_queried_object_id();
 	$thisTemplate = new AMP_Post_Template($post_id);
 	global $redux_builder_amp;
@@ -235,10 +235,10 @@ function amp_header_core(){
 
 		</head>
 		<body class="<?php echo $bodyClass; ?>">
-		<?php amp_header();
+		<?php amp_header_core();
 }
 
-function amp_header(){
+function amp_header_core(){
 	$post_id = get_queried_object_id();
 	$thisTemplate = new AMP_Post_Template($post_id);
 
