@@ -4,6 +4,8 @@
 add_amp_theme_support('AMP-search');
 //Logo
 add_amp_theme_support('AMP-logo');
+//Title
+add_amp_theme_support('AMP-title');
 //Social Icons
 add_amp_theme_support('AMP-social-icons');
 //Menu

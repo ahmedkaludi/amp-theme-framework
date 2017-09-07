@@ -634,7 +634,7 @@ function ampforwp_custom_style() {
 		margin-bottom: 40px;
 	}
 	.amp-wp-title {	 
-		color: #fff ;
+		color: #000 ;
 		font-weight: 600;
 		font-size: 30px;
 		font-family: 'Source Serif Pro', serif;

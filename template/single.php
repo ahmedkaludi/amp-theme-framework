@@ -20,7 +20,7 @@
 	<main>
 		<article class="amp-wp-article">
 			<?php do_action('ampforwp_post_before_design_elements') ?>
-
+<?php amp_title(); ?>
 <?php amp_featured_image(); ?>
 
 

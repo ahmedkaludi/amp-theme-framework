@@ -1,7 +1,7 @@
 <?php
 $loadComponent = array();
 $scriptComponent = array();
-$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box','AMP-loop','AMP-categories-tags','AMP-comments','AMP-post-navigation','AMP-related-posts','AMP-post-pagination','AMP-call-now');
+$supportComponent = array('AMP-search','AMP-menu','AMP-logo','AMP-title','AMP-social-icons','AMP-sidebar','AMP-featured-image','AMP-author-box','AMP-loop','AMP-categories-tags','AMP-comments','AMP-post-navigation','AMP-related-posts','AMP-post-pagination','AMP-call-now');
 //$removeScriptComponent = array('amp-carousel');
 add_filter( 'amp_post_template_data', 'ampforwp_framework_add_and_form_scripts',20);
 function ampforwp_framework_add_and_form_scripts($data) {
@@ -69,6 +69,15 @@ function amp_logo(){
 		 ampforwp_framework_get_logo();
 	}
 }
+
+// Title
+function amp_title(){
+	global $loadComponent;
+	if(isset($loadComponent['AMP-title']) && $loadComponent['AMP-title']==true){
+		 echo ampforwp_framework_get_the_title();
+	}
+}
+
 
 //Menus
 function amp_menu(){
