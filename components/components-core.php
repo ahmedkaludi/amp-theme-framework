@@ -226,11 +226,8 @@ function amp_header_core(){
 	<html amp <?php echo AMP_HTML_Utils::build_attributes_string( $thisTemplate->get( 'html_tag_attributes' ) ); ?>>
 		<head>
 		<meta charset="utf-8">
-		<!-- __START__ IF GOOGLE FONT IS AVAILABLE THEN LOAD __START__ -->
 		    <link rel="dns-prefetch" href="https://cdn.ampproject.org">
-		    <?php do_action( 'amp_post_template_head', $thisTemplate ); ?>
-		<!-- __END__ IF GOOGLE FONT IS AVAILABLE THEN LOAD __END__ -->
-			
+		    <?php do_action( 'amp_post_template_head', $thisTemplate ); ?>			
 			<style amp-custom>
 				<?php $thisTemplate->load_parts( array( 'style' ) ); ?>
 				<?php do_action( 'amp_post_template_css', $thisTemplate ); ?>
