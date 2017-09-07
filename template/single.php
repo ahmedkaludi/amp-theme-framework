@@ -37,7 +37,8 @@ amp_post_pagination();
  
  
 
-			<?php do_action('ampforwp_post_after_design_elements') ?>
+			<?php  // this hook for comments, can be removed safely
+			//do_action('ampforwp_post_after_design_elements')  ?>
 		</article>
 	</main>
 <?php amp_footer()?>
