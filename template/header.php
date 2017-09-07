@@ -1,6 +1,4 @@
-<?php amp_header_core(); ?>
-
-<header class="header container">
+ <header class="header container">
     <?php amp_logo(); ?>
     <?php amp_sidebar(['action'=>'open-button']); ?> 
     <?php amp_call_now(); ?>

@@ -235,7 +235,7 @@ function amp_header_core(){
 
 		</head>
 		<body class="<?php echo $bodyClass; ?>">
-<?php
+		<?php amp_header();
 }
 
 function amp_header(){
