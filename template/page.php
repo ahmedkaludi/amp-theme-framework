@@ -1,6 +1,5 @@
-<?php
- amp_header();  
-  amp_title();  
-	amp_featured_image();
-	amp_content();
- amp_footer(); ?>
+<?php amp_header(); ?>
+<?php amp_title(); ?>
+<?php amp_featured_image(); ?>
+<?php amp_content(); ?>
+<?php amp_footer(); ?>

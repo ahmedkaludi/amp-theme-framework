@@ -281,6 +281,7 @@ function amp_loop_template(){
 	 $thisTemplate->load_parts( array( 'loop' ) ); 
 }
 
+// The Content
 function amp_content(){ 
 global $redux_builder_amp, $post;
 $post_id = get_queried_object_id();
