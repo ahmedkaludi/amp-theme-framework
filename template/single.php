@@ -23,9 +23,6 @@
 						} 
 						$ampforwp_the_content = apply_filters('ampforwp_content_filter',$ampforwp_the_content);
 						echo $ampforwp_the_content;
-						
-					do_action('ampforwp_inside_post_content_after');
-                    // AD Slot #4
                     do_action('ampforwp_after_post_content'); ?>
 
 				</div>
