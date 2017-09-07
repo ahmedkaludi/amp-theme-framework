@@ -232,7 +232,7 @@ function ampforwp_custom_style() {
         position: absolute;
         height: 2px;
         width: 25px;
-        background: #ffffff;
+        background: #000;
         border-radius: 19px;
         opacity: 1;
         left: 0;
