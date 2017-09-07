@@ -218,7 +218,7 @@ function call_loops_standard($data=array()){
 	     } 
 	} 
 
-	//Category
+	// Category
 	function amp_loop_category(){
 		echo ' <ul class="loop-category">';
 		if(count(get_the_category()) > 0){

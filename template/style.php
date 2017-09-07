@@ -7,15 +7,17 @@ function ampforwp_custom_style() {
 * AMP Framework Reset
 *****/
     body{ font-family: sans-serif; font-size: 16px; line-height:1.4; }
+    ol, ul{ list-style-position: inside }
     p, ol, ul, figure{ margin: 0 0 1em; padding: 0; }
     a, a:active, a:visited{ color:#ed1c24; text-decoration: none }
     a:hover, a:active, a:focus{}
     pre{ white-space: pre-wrap;}
     .hidden{ display:none }
     .clearfix{ clear:both }
-    blockquote {background: rgba(127,127,127,.125);margin: 8px 0 24px 0;padding: 15px;}
+    blockquote{ background: #f1f1f1; margin: 10px 0 20px 0; padding: 15px;}
     blockquote p:last-child {margin-bottom: 0;}
     .amp-wp-unknown-size img {object-fit: contain;}
+    .amp-wp-enforced-sizes{ max-width: 100% }
 
     /* Image Alignment */
     .alignright {
@@ -122,8 +124,29 @@ function ampforwp_custom_style() {
         background: #444;
     }
 
+
 /**** 
-* AMP Comments
+* Loop
+*****/
+.loop-wrapper .loop-img{
+    float: left;
+    margin-right: 15px;
+}
+.loop-category{
+    list-style-type:none
+}
+.loop-category li{
+    display:inline;
+    margin-right:1px;
+}
+
+/**** 
+* Single
+*****/
+
+
+/**** 
+* Comments
 *****/
 	.comments_list ul{
 	    margin:0;
