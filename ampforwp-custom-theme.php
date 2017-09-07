@@ -53,7 +53,7 @@ function ampforwp_custom_header_file( $file, $type ) {
 
 // Custom Template Files
 function ampforwp_designing_custom_template( $file, $type, $post ) { 
-
+ global $redux_builder_amp;
 	// Single file
     if ( is_single() || is_page() ) {
 		if('single' === $type && !('product' === $post->post_type )) {
@@ -68,9 +68,13 @@ function ampforwp_designing_custom_template( $file, $type, $post ) {
     }
     // Homepage
 	if ( is_home() ) {
-        if ( 'single' === $type ) {
-            $file = AMPFORWP_CUSTOM_THEME . '/template/index.php';
+		if ( 'single' === $type ) {
+        	$file = AMPFORWP_CUSTOM_THEME . '/template/index.php';
+        
+        if ($redux_builder_amp['amp-frontpage-select-option'] == 1) {
+			$file = AMPFORWP_CUSTOM_THEME . '/template/page.php';
         }
+    }
     }
     // is_search
 	if ( is_search() ) {

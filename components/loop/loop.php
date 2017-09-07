@@ -119,6 +119,7 @@ function call_loops_standard($data=array()){
 		} else {
 		    $paged = 1;
 		}
+		$pre_link = '';
 		if ( $paged > 1 ) { 
 			$pre_link = '<div class="prev">'.previous_posts_link( ampforwp_translation($redux_builder_amp['amp-translator-show-previous-posts-text'], 'Show previous Posts' ) ) .'</div>';
 		}
@@ -144,12 +145,12 @@ function call_loops_standard($data=array()){
 			$attributes = $data['attributes'];
 		}
 		echo '<'.$tag.' '.$attributes.'>';
-			if(isset($data['link']) || $data['link']!="false"){
+			if(!isset($data['link']) ){
 				echo '<a href="'. amp_loop_parmalink(true) .'">';
 			}
 		echo the_title('','',false);
 		
-			if(isset($data['link']) || $data['link']!="false"){
+			if(!isset($data['link']) ){
 				echo  '</a>';
 			}
 		echo '</'.$tag.'>';
@@ -189,7 +190,7 @@ function call_loops_standard($data=array()){
 		global $ampLoopData,$counterOffset;
 		if (has_post_thumbnail()  ) { 
 			$tag = 'div';
-			$tagClass = '';
+			$tag_class = '';
 			$imageClass = 'class =';
 			if(isset($data['tag']) && $data['tag']!=""){
 				$tag = $data['tag'];
@@ -217,11 +218,10 @@ function call_loops_standard($data=array()){
 	//Category
 	function amp_loop_category(){
 		echo ' <ul class="amp-wp-tags">';
-		foreach((get_the_category()) as $category) {
-			$ampLoopData[$key]['category'][] =  array('id'=>$category->term_id,
-													'name'=>$category->cat_name
-													);
-			echo '<li class="amp-cat-'. $category->term_id.'">'. $category->cat_name.'</li>';
+		if(count(get_the_category()) > 0){
+			foreach((get_the_category()) as $category) {
+				echo '<li class="amp-cat-'. $category->term_id.'">'. $category->cat_name.'</li>';
+			}
 		}
 		echo '</ul>';
 	}
