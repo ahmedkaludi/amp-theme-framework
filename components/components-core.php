@@ -182,8 +182,8 @@ function amp_call_now(){
 }
 
 function amp_header(){
-	$ampforwp_custom_post_page  =  ampforwp_custom_post_page();
-	$thisTemplate = new AMP_Post_Template($ampforwp_custom_post_page);
+	$post_id = get_queried_object_id();
+	$thisTemplate = new AMP_Post_Template($post_id);
 	global $redux_builder_amp;
 	$html_tag_attributes = 'lang="en-US"';//AMP_HTML_Utils::build_attributes_string( $this->get( 'html_tag_attributes' ) );
 	if ( is_home() || is_front_page()  || ( is_archive() && $redux_builder_amp['ampforwp-archive-support'] ) ){
