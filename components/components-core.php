@@ -257,3 +257,11 @@ function amp_footer(){
 	?></body>
 	</html><?php
 }
+
+
+function amp_loop_template(){
+	$post_id = get_queried_object_id();
+	$thisTemplate = new AMP_Post_Template($post_id);
+
+	 $thisTemplate->load_parts( array( 'loop' ) ); 
+}

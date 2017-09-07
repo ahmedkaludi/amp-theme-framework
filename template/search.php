@@ -1,21 +1,10 @@
-<?php global $redux_builder_amp;  ?>
 <?php amp_header() ?>
-
-
-<main>
 	<?php do_action('ampforwp_post_before_loop') ?>
-	<?php amp_page_title(); ?>
-	<?php 
-	 while(amp_loop('start')): ?>
-			<?php amp_loop_image(); ?>
-			<?php amp_loop_title(); ?>
-			<?php amp_loop_excerpt(); ?>
-			<?php amp_loop_category(); ?>
-			<?php amp_loop_date(); ?>
-		<?php amp_loop('end'); ?> 
-	<?php endwhile;  ?>
-	<?php amp_pagination(); ?>
+
+    <?php amp_archive_title(); ?>
+    <?php amp_loop_template(); ?>
+    <?php amp_pagination(); ?>
 
 	<?php do_action('ampforwp_post_after_loop') ?>
-</main>
+
 <?php amp_footer(); ?>

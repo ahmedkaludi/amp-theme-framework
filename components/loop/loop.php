@@ -1,5 +1,5 @@
 <?php
-function amp_page_title(){
+function amp_archive_title(){
 	global $redux_builder_amp;
 	if ( is_archive() ) {
 	    the_archive_title( '<h3 class="amp-archive-title">', '</h3>' );
@@ -85,6 +85,7 @@ function call_loops_standard($data=array()){
 		global $amp_q;
 		if(empty($amp_q) || is_null($amp_q)){
 			call_loops_standard();
+            echo "<div class='loop-wrapper'>";
 		}
 		if ( !isset($ampLoopData['no_data']) ) :
 			switch($selection){
@@ -108,6 +109,7 @@ function call_loops_standard($data=array()){
 	}
 	function amp_end_loop(){
 		wp_reset_postdata();
+        echo "</div>";
 	}
 
 	function amp_pagination(){
@@ -124,7 +126,7 @@ function call_loops_standard($data=array()){
 			$pre_link = '<div class="prev">'.previous_posts_link( ampforwp_translation($redux_builder_amp['amp-translator-show-previous-posts-text'], 'Show previous Posts' ) ) .'</div>';
 		}
 
-		echo '<div id="pagination">
+		echo '<div class="loop-pagination">
 					<div class="next">'. next_posts_link( ampforwp_translation($redux_builder_amp['amp-translator-show-more-posts-text'] , 'Show more Posts'), $amp_q->max_num_pages ) .'</div>
 						'.$pre_link.'
 					<div class="clearfix"></div>
@@ -140,13 +142,13 @@ function call_loops_standard($data=array()){
 		if(isset($data['tag']) && $data['tag']!=""){
 			$tag = $data['tag'];
 		}
-		$attributes = 'class="amp-loop-title"';
+		$attributes = 'class="loop-title"';
 		if(isset($data['attributes']) && $data['attributes']!=""){
 			$attributes = $data['attributes'];
 		}
 		echo '<'.$tag.' '.$attributes.'>';
 			if(!isset($data['link']) ){
-				echo '<a href="'. amp_loop_parmalink(true) .'">';
+				echo '<a href="'. amp_loop_permalink(true) .'">';
 			}
 		echo the_title('','',false);
 		
@@ -158,11 +160,12 @@ function call_loops_standard($data=array()){
 
 	function amp_loop_date(){
 		global $redux_builder_amp;
-		$post_date =  human_time_diff( 
+		$post_date =  human_time_diff(
         						get_the_time('U', get_the_ID() ), 
         						current_time('timestamp') ) .' '. ampforwp_translation( $redux_builder_amp['amp-translator-ago-date-text'],
-        						'ago' );
-        echo $post_date;
+        						'ago');
+        
+        echo '<div class="loop-date">'.$post_date.'</div>';
 	}
 
 	function amp_loop_excerpt($no_of_words=15,$tag = 'p'){
@@ -180,7 +183,7 @@ function call_loops_standard($data=array()){
 		echo '<'.$tag.'>'. $fullContent .'</'.$tag.'>';
 	}
 
-	function amp_loop_parmalink($return,$amp_query_var ='amp'){
+	function amp_loop_permalink($return,$amp_query_var ='amp'){
 		if($return){
 			return trailingslashit( get_permalink() ) . AMPFORWP_AMP_QUERY_VAR ;
 		}
@@ -203,13 +206,13 @@ function call_loops_standard($data=array()){
 			}
 
 			$thumb_id = get_post_thumbnail_id();
-			$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'medium', true);
+			$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail', true);
 			$thumb_url = $thumb_url_array[0];
 			
 
-			echo '<'.$tag.' class="home-post_image '.$tag_class.'">';
-			echo '<a href="'.amp_loop_parmalink(true).'">';
-			echo '<amp-img '.$imageClass.' layout="responsive" src="'. $thumb_url .'" width=450 height=270 ></amp-img>';
+			echo '<'.$tag.' class="loop-img '.$tag_class.'">';
+			echo '<a href="'.amp_loop_permalink(true).'">';
+			echo '<amp-img '.$imageClass.' layout="responsive" src="'. $thumb_url .'" width=150 height=150></amp-img>';
 			echo '</a>';
 			echo '</'.$tag.'>';
 	     } 
@@ -217,7 +220,7 @@ function call_loops_standard($data=array()){
 
 	//Category
 	function amp_loop_category(){
-		echo ' <ul class="amp-wp-tags">';
+		echo ' <ul class="loop-category">';
 		if(count(get_the_category()) > 0){
 			foreach((get_the_category()) as $category) {
 				echo '<li class="amp-cat-'. $category->term_id.'">'. $category->cat_name.'</li>';

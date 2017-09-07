@@ -43,13 +43,15 @@ function ampforwp_custom_theme_files_register(){
 
 
 // Custom Header
-function ampforwp_custom_header_file( $file, $type ) { 
+function ampforwp_custom_header_file( $file, $type ) {
 	if ( 'header' === $type ) {
 		$file = AMPFORWP_CUSTOM_THEME . '/template/header.php';
 	}
 	return $file;
 }
 
+
+ 
 
 // Custom Template Files
 function ampforwp_designing_custom_template( $file, $type, $post ) { 
@@ -59,6 +61,10 @@ function ampforwp_designing_custom_template( $file, $type, $post ) {
 		if('single' === $type && !('product' === $post->post_type )) {
 			$file = AMPFORWP_CUSTOM_THEME . '/template/single.php';
 	 	}
+	}
+    // Loop Template
+    if ( 'loop' === $type ) {
+		$file = AMPFORWP_CUSTOM_THEME . '/template/loop.php';
 	}
     // Archive
 	if ( is_archive() ) {
