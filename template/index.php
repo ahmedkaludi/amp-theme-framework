@@ -1,8 +1,5 @@
 <?php global $redux_builder_amp;  ?>
 <?php amp_header(); ?>
-    
-<?php $this->load_parts( array( 'header-bar' ) ); ?>
-<?php do_action( 'ampforwp_after_header', $this ); ?>
 
 <div class="amp-wp-article ampforwp-custom-index amp-wp-home">
 

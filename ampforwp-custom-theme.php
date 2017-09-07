@@ -44,8 +44,8 @@ function ampforwp_custom_theme_files_register(){
 
 // Custom Header
 function ampforwp_custom_header_file( $file, $type ) { 
-	if ( 'header-bar' === $type ) {
-		$file = AMPFORWP_CUSTOM_THEME . '/template/header-bar.php';
+	if ( 'header' === $type ) {
+		$file = AMPFORWP_CUSTOM_THEME . '/template/header.php';
 	}
 	return $file;
 }

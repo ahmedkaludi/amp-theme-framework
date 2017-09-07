@@ -1,4 +1,4 @@
-<?php //amp_header_core(); ?>
+<?php amp_header_core(); ?>
 
 <?php global $redux_builder_amp; ?>
 <header id="#top" class="amp-header">
