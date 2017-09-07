@@ -1,14 +1,13 @@
+<?php //amp_header_core(); ?>
+
 <?php global $redux_builder_amp; ?>
 <header id="#top" class="amp-header">
-    
 <?php amp_logo(); ?>
 <?php amp_sidebar(['action'=>'open-button']); ?> 
 <?php amp_call_now(); ?>
-
 </header>
 
-<?php amp_sidebar([
-    'action'=>'start',
+<?php amp_sidebar(['action'=>'start',
     'id'=>'sidebar',
     'layout'=>'nodisplay',
     'side'=>'right'
