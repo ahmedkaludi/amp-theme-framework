@@ -38,10 +38,9 @@ function ampforwp_framework_get_related_posts(){
 		}
 		$my_query = new wp_query( $args );
 				if( $my_query->have_posts() ) { ?>
-					<div class="amp-wp-content relatedpost">
-					    <div class="related_posts">
-									<ol class="clearfix">
-											<span class="related-title"><?php echo ampforwp_translation( $redux_builder_amp['amp-translator-related-text'], 'Related Post' ); ?></span><!--#930-->
+					    <div class="amp-related-posts">
+									<ul class="clearfix">
+											<span class="related-title"><?php echo ampforwp_translation( $redux_builder_amp['amp-translator-related-text'], 'Related Post' ); ?></span>
 											<?php
 									    while( $my_query->have_posts() ) {
 											    $my_query->the_post();
@@ -76,8 +75,7 @@ function ampforwp_framework_get_related_posts(){
 												}
 
 				        } ?>
-								</ol>
-					    </div>
+								</ul>
 					</div> <?php
       wp_reset_postdata();
 //related posts code ends here

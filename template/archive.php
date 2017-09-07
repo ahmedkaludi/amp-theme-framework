@@ -32,9 +32,8 @@ if ( is_home() || is_front_page()  || ( is_archive() && $redux_builder_amp['ampf
 
     
   <?php amp_page_title(); ?>
-<!-- Loop Starts -->  
-		<?php 
-	 while(amp_loop('start')): ?>
+
+    <?php while(amp_loop('start')): ?>
 			<?php amp_loop_image(); ?>
 			<?php amp_loop_title(); ?>
 			<?php amp_loop_excerpt(); ?>
