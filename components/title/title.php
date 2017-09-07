@@ -2,11 +2,9 @@
 function ampforwp_framework_get_the_title() { 
 	global $redux_builder_amp, $post;
 	$ID = '';
-	if(is_home()){
-		if ($redux_builder_amp['amp-frontpage-select-option'] == 1) {
-			if( $redux_builder_amp['ampforwp-title-on-front-page'] ) {
-				$ID = $redux_builder_amp['amp-frontpage-select-option-pages'];
-			}
+	if(is_home() && $redux_builder_amp['amp-frontpage-select-option'] == 1){
+		if( $redux_builder_amp['ampforwp-title-on-front-page'] ) {
+			$ID = $redux_builder_amp['amp-frontpage-select-option-pages'];
 		}
 	}
 	else
