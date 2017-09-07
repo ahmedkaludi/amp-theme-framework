@@ -1,5 +1,6 @@
-<?php global $redux_builder_amp;
- global $wp;
+<?php
+global $redux_builder_amp;
+global $wp;
 $post_id = $redux_builder_amp['amp-frontpage-select-option-pages'];
 $template = new AMP_Post_Template( $post_id );?>
 <?php amp_header() ?>
@@ -14,5 +15,3 @@ $template = new AMP_Post_Template( $post_id );?>
     <?php do_action( 'amp_post_template_above_footer', $this ); ?>
 	<?php $this->load_parts( array( 'footer' ) ); ?>
 	<?php do_action( 'amp_post_template_footer', $this ); ?>
-</body>
-</html>
