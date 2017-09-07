@@ -7,5 +7,5 @@
           ?>
       </p>
 </footer>
-<?php do_action('ampforwp_global_after_footer'); ?><?php // AD slot #2
-do_action('amp_post_template_above_footer');?>
+ <?php do_action('ampforwp_global_after_footer');   
+ /* TODO: Check ampforwp_global_after_footer hook, it contains search functions which have amp-lightbox, we need to check and remove it. 
