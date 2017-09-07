@@ -24,8 +24,9 @@ function ampforwp_custom_style() {
      }
     html { }
     body {
-        font-family: Serif;
-        line-height: 1.75em;
+		font-family: 'Source Sans Pro', serif;
+		font-size: 18px;
+		line-height:1.4;
     }
     p,
     ol,
@@ -270,12 +271,13 @@ function ampforwp_custom_style() {
         opacity: 1;
         left: 0;
     }
-	.toggle-text span:nth-child(2)  {
-        top: 9px;
+    .toggle-text span:nth-child(2){
+        top: 7px;
     }
-	.toggle-text span:nth-child(3)  {
-        top: 18px;
+    .toggle-text span:nth-child(3){
+        top:14px;
     }
+
 	/* Homepage */
     .amp-wp-home .amp-wp-meta{
         margin:5px 0px
@@ -616,39 +618,9 @@ function ampforwp_custom_style() {
     NOTE: Enter your CSS below for the Custom AMP theme
     **
 *********************************************/
-	html {	
-		background: #fff;
-	}
-	body {
-		font-family: 'Source Sans Pro', serif;
-		font-size: 19px;
-		line-height:28px;
-	}
-	.toggle-text span  {
-		background: #d82370;
-		width: 22px;
-    }
-	.amp-wp-article {
-		margin-top: 0;
-		margin-bottom:0;
-	}
-	/* Homepage */
-	.amp-wp-article {
-		max-width: 600px;
-	}
 
-	.home-post-image-big {
-		margin-right: -16px;
-		margin-left: -16px;
-		margin-bottom: 16px;
-	}
-	.amp-wp-home .amp-wp-content p {
-		margin: 0;		
-		display: inline-block;
-		font-size: 15px;
-		line-height: 1.5;
-        color:#666
-	}
+
+
 	.amp-loop-list {
 		border-bottom: 1px solid #ededed;
 		padding-bottom: 40px;
@@ -658,28 +630,8 @@ function ampforwp_custom_style() {
 		margin-top: 0;
 		padding-bottom: 25px;
 	}
-	.amp-wp-content.pagination-holder {
-		margin-top: -10px;
-	}
 	.comment-button-wrapper {
 		margin-bottom: 40px;
-	}
-	/* Featured Area */
-	.ampforwp-featured-holder amp-img:before{
-		content: '';
-		position: absolute;
-		background: rgba(0,0,0,0.6);
-		height: 100%;
-		width: 100%;
-		z-index:1;
-	}
-	.ampforwp-featured-holder {
-		position: relative;		
-		background: rgba(0,0,0,0.6);
-		margin-bottom: 11px;
-	}
-	.ampforwp-featured-holder {
-	    align-content: stretch;
 	}
 	.amp-wp-title {	 
 		color: #fff ;
@@ -689,16 +641,6 @@ function ampforwp_custom_style() {
 		line-height: 36px;
 		margin-bottom: 10px;
 	}
-	.ampforwp-featured-holder .ampforwp-title {
-        bottom: 10px;
-        position: absolute;
-        margin: 0;
-        text-align: center;
-        z-index: 10;
-        display: inline-block;
-        width: 100%;
-        margin-bottom:15px;
-    }
 	.ampforwp-meta-info {	
 		color: #fff ; 
 	    display: block;
@@ -748,9 +690,7 @@ function ampforwp_custom_style() {
 	.related_posts ol li:nth-of-type(2n) .related_link{
 		margin:0px 0px 0px 8px ;
 	}
-	.related_link {
-		line-height: 1.1;
-	}
+
 	.comment-button-wrapper a {
 		background: #3c3c3c;
 		border-radius: 50em;
@@ -761,52 +701,6 @@ function ampforwp_custom_style() {
     .archive-page-title{
         margin:25px 25px 10px 25px;
     }
-	/* Footer */
-	#footer{
-		border-top:1px solid #ddd;
-	    background : #fff;
-	    font-size: 13px;
-	    text-align: center;
-	    letter-spacing: 0.2px;
-	    line-height:1;
-	    padding: 20px 0;
-	} 
-	#footer p{
-	    margin: 0
-	}
-    .amp-wp-article-content p{
-        margin-top: -2px;
-        padding-right: 6px;
-    }
-    .toggle-text span:nth-child(2){
-        top: 7px;
-    }
-    .toggle-text span:nth-child(3){
-        top:14px;
-    }
-    @media screen and (max-width: 1200px) and (min-width: 600px) {
-        .related_posts ol li:nth-of-type(2n) amp-img{
-            margin:0px 15px 0px 0px ;
-        }
-        .related_posts ol li:nth-of-type(2n) .related_link{
-            margin:0px 15px 0px 0px ;
-        }	
-    }
-
-    @media screen and (max-width: 450px) and (min-width: 320px) {
-        .amp-wp-title {
-            font-size: 22px;
-            line-height:28px; 
-        } 
-        .ampforwp-meta-info span {
-            font-size: 12px;
-        }
-    }
-
-
-
-
-
     /* Custom CSS Code from Options Panel */
 	<?php echo $redux_builder_amp['css_editor']; ?>
 

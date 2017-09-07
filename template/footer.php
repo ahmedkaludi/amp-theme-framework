@@ -1,5 +1,4 @@
-<footer class="container">
-  <div id="footer">
+<footer class="amp-footer">
       <p>
         <?php
           global $allowed_html;
@@ -7,8 +6,6 @@
           echo wp_kses($redux_builder_amp['amp-translator-footer-text'],$allowed_html) ;
           ?>
       </p>
-  </div>
 </footer>
-<?php do_action('ampforwp_global_after_footer'); ?>
-<?php // AD slot #2
+<?php do_action('ampforwp_global_after_footer'); ?><?php // AD slot #2
 do_action('amp_post_template_above_footer');?>
