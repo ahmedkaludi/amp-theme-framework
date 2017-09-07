@@ -56,6 +56,14 @@ function ampforwp_custom_style() {
 
 
 /****
+* Container
+*****/
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/****
 * AMP Sidebar
 *****/
     amp-sidebar {
@@ -63,21 +71,17 @@ function ampforwp_custom_style() {
     }
 
     /* AMP Sidebar Toggle button */
+    .amp-sidebar-button{
+        position:relative
+    }
     .amp-sidebar-toggle  {
-        position: absolute;
-        right: 0;
-        height: 22px;
-        width: 28px;
     }
     .amp-sidebar-toggle span  {
         display: block;
-        position: absolute;
         height: 2px;
-        width: 25px;
+        margin-bottom: 5px;
+        width: 22px;
         background: #000;
-        border-radius: 19px;
-        opacity: 1;
-        left: 0;
     }
     .amp-sidebar-toggle span:nth-child(2){
         top: 7px;

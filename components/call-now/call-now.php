@@ -11,6 +11,6 @@ function amp_call_button_html_output(){
 add_action('amp_post_template_css','amp_callnow_styles',11); 
 function amp_callnow_styles(){
     global $redux_builder_amp; if ($redux_builder_amp['ampforwp-callnow-button']) { ?>
-.amp-phone{ margin: 0; right: 60px; position:relative }
-.amp-phone a:before { content: ""; position: absolute;right:0; width: 4px; height: 8px; border-width: 6px 0 6px 3px; border-style: solid; border-color:<?php echo $redux_builder_amp['amp-opt-color-rgba-colorscheme-call']['color']; ?>; background: transparent; transform: rotate(-30deg); box-sizing: initial; border-top-left-radius: 3px 5px; border-bottom-left-radius: 3px 5px; }
+.amp-phone{ position:relative }
+.amp-phone a:before { content: ""; display:inline-block; width: 4px; height: 8px; border-width: 6px 0 6px 3px; border-style: solid; border-color:<?php echo $redux_builder_amp['amp-opt-color-rgba-colorscheme-call']['color']; ?>; background: transparent; transform: rotate(-30deg); box-sizing: initial; border-top-left-radius: 3px 5px; border-bottom-left-radius: 3px 5px; }
 <?php }} ?>
