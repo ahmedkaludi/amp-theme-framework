@@ -60,11 +60,8 @@ function amp_menu_styles(){ ?>
               margin: 0;
               padding: 0;
               position: relative;
-              /* left: 100%; */
             }
             .amp-menu > li ul, .amp-menu > li ul {
-              /*min-width: 150px;
-              top: 0;*/
               border-left: 1px solid #fff;
             }
 

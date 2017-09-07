@@ -20,7 +20,7 @@ function ampforwp_framework_get_related_posts(){
 						);
 					}
 		} 
-		// tags
+    // tags
 	 if($redux_builder_amp['ampforwp-single-select-type-of-related']==1) {
 				$ampforwp_tags = get_the_tags($post->ID);
 					if ($ampforwp_tags) {
@@ -40,7 +40,7 @@ function ampforwp_framework_get_related_posts(){
 				if( $my_query->have_posts() ) { ?>
 					    <div class="amp-related-posts">
 									<ul class="clearfix">
-											<span class="related-title"><?php echo ampforwp_translation( $redux_builder_amp['amp-translator-related-text'], 'Related Post' ); ?></span>
+											<span class="amp-related-posts-title"><?php echo ampforwp_translation( $redux_builder_amp['amp-translator-related-text'], 'Related Post' ); ?></span>
 											<?php
 									    while( $my_query->have_posts() ) {
 											    $my_query->the_post();
@@ -48,7 +48,7 @@ function ampforwp_framework_get_related_posts(){
 														$related_post_permalink = trailingslashit($related_post_permalink);
 														$related_post_permalink = trailingslashit( $related_post_permalink . AMPFORWP_AMP_QUERY_VAR );
 													?>
-													<li class="<?php if ( has_post_thumbnail() ) { echo'has_related_thumbnail'; } else { echo 'no_related_thumbnail'; } ?>">
+													<li class="<?php if ( has_post_thumbnail() ) { echo'has_thumbnail'; } else { echo 'no_thumbnail'; } ?>">
                                                         <a href="<?php echo esc_url( $related_post_permalink ); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 								            <?php
 									            $thumb_id_2 = get_post_thumbnail_id();
@@ -76,11 +76,7 @@ function ampforwp_framework_get_related_posts(){
 
 				        } ?>
 								</ul>
-					</div> <?php
-      wp_reset_postdata();
-//related posts code ends here
-	?>
-<?php do_action('ampforwp_below_related_post_hook',$this);
-
-
+					</div>
+<?php wp_reset_postdata(); ?>
+<?php do_action('ampforwp_below_related_post_hook',$this); 
 }

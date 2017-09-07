@@ -3,7 +3,7 @@ function ampforwp_framework_get_featured_image(){
 global $post;
 $post_id = $post->ID;
  if (has_post_thumbnail( $post_id ) ):  ?>
-				<figure class="amp-wp-article-featured-image wp-caption"> <?php  
+				<figure class="amp-featured-image"> <?php  
 					$thumb_id = get_post_thumbnail_id($post_id);
 					$image = wp_get_attachment_image_src( $thumb_id, 'full' ); 
 					$caption = get_the_post_thumbnail_caption( $post_id ); 

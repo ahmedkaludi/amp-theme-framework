@@ -15,7 +15,7 @@ else {
 	  return;
 	}
 	?>
-	<div class="ampforwp-comment-wrapper">
+	<div class="amp-comments">
 	<?php
 		global $redux_builder_amp;
 		// Gather comments for a specific page/post
@@ -25,7 +25,7 @@ else {
 				'status' => 'approve' //Change this to the type of comments to be displayed
 		));
 		if ( $comments ) { ?>
-			<div class="amp-wp-content comments_list">
+			<div class="amp-comments-wrapper">
 	            <h3><?php global $redux_builder_amp; echo ampforwp_translation($redux_builder_amp['amp-translator-view-comments-text'], 'View Comments' )?></h3>
 	            <ul>
 						<?php
@@ -49,41 +49,34 @@ else {
 														</a>
 														<?php edit_comment_link(  ampforwp_translation( $redux_builder_amp['amp-translator-Edit-text'], 'Edit' )  ) ?>
 													</div>
-													<!-- .comment-metadata -->
 												</footer>
-													<!-- .comment-meta -->
 												<div class="comment-content">
 							                        <?php
 							                          	$comment_content = get_comment_text();
-							                        	// Added <p> tag in comments #873
 							                        	$comment_content = wpautop( $comment_content );
 							                          $sanitizer = new AMPFORWP_Content( $comment_content, array(), apply_filters( 'ampforwp_content_sanitizers', array( 'AMP_Img_Sanitizer' => array(),
 							                          'AMP_Video_Sanitizer' => array() ) ) );
 							                         $sanitized_comment_content =  $sanitizer->get_amp_content();
 							                          echo make_clickable( $sanitized_comment_content );   ?>
 												</div>
-													<!-- .comment-content -->
 											</article>
-										 <!-- .comment-body -->
 										</li>
-									<!-- #comment-## -->
-										<?php
-									}// end of ampforwp_custom_translated_comment()
-
+										<?php }
 					wp_list_comments( array(
-					  'per_page' 			=> AMPFORWP_COMMENTS_PER_PAGE , //Allow comment pagination
-					  'style' 				=> 'li',
-					  'type'				=> 'comment',
-					  'max_depth'   		=> 5,
-					  'avatar_size'			=> 0,
-						'callback'				=> 'ampforwp_custom_translated_comment',
-					  'reverse_top_level' 	=> true //Show the latest comments at the top of the list
+                        //Allow comment pagination
+                        'per_page' 			=> AMPFORWP_COMMENTS_PER_PAGE , 
+                        'style' 				=> 'li',
+                        'type'				=> 'comment',
+                        'max_depth'   		=> 5,
+                        'avatar_size'			=> 0,
+                        'callback'				=> 'ampforwp_custom_translated_comment',
+                        'reverse_top_level' 	=> true //Show the latest comments at the top of the list
 					), $comments);  ?>
 			    </ul>
 			</div>
 	    <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 	    if( ! is_plugin_active( 'amp-comments/amp-comments.php' ) ) { ?>
-	  		<div class="amp-comments-button">
+	  		<div class="amp-comment-button">
 	  		   <a href="<?php echo ampforwp_comment_button_url(); ?>" rel="nofollow"><?php echo ampforwp_translation( $redux_builder_amp['amp-translator-leave-a-comment-text'], 'Leave a Comment'  ); ?></a>
 	  		</div>
 	    <?php } ?>
@@ -115,7 +108,7 @@ global $redux_builder_amp;
 		return;
 	}
 	if ( $redux_builder_amp['ampforwp-facebook-comments-support'] ) { 
-		$facebook_comments_markup = '<section class="amp-wp-content post-comments amp-wp-article-content amp-facebook-comments" id="comments">';
+		$facebook_comments_markup = '<section class="amp-facebook-comments">';
 		$facebook_comments_markup .= '<amp-facebook-comments width=486 height=357
 	    		layout="responsive" data-numposts=';
 		$facebook_comments_markup .= '"'. $redux_builder_amp['ampforwp-number-of-fb-no-of-comments']. '" ';
@@ -144,7 +137,7 @@ global $redux_builder_amp;
 
 		$disqus_url = $disqus_script_host_url.'?disqus_title='.$post_slug.'&url='.get_permalink().'&disqus_name='. esc_url( $redux_builder_amp['ampforwp-disqus-comments-name'] ) ."/embed.js"  ;
 		?>
-		<section class="amp-wp-content post-comments amp-wp-article-content amp-disqus-comments" id="comments">
+		<section class="amp-disqus-comments">
 			<amp-iframe
 				height=200
 				width=300
@@ -164,7 +157,6 @@ add_filter( 'amp_post_template_data', 'ampforwp_framework_comments_scripts' );
 function ampforwp_framework_comments_scripts( $data ) {
 
 	$facebook_comments_check = ampforwp_framework_get_facebook_comments();
-	//var_dump($facebook_comments_check);
 	global $redux_builder_amp;
 	if ( $facebook_comments_check && $redux_builder_amp['ampforwp-facebook-comments-support'] && is_singular() ) {
 			if ( empty( $data['amp_component_scripts']['amp-facebook-comments'] ) ) {

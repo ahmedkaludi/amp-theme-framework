@@ -32,6 +32,7 @@ function ampforwp_custom_style() {
         white-space: pre-wrap;
     }
     .hidden{ display:none }
+    .clearfix{ clear:both }
     /* Quotes */
     blockquote {
         background: rgba(127,127,127,.125);

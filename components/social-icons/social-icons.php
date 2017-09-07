@@ -1,7 +1,8 @@
 <?php 
 function ampforwp_framework_get_social_icons($selected_social_icons){ 
 
-	/* TODO: 1: Connect with options panel
+	/* TODO: 
+    1: Connect with options panel
 	2: Add icons for email, line and whatsapp
 	*/
 	global $post;
@@ -17,7 +18,7 @@ function ampforwp_framework_get_social_icons($selected_social_icons){
 
 	foreach ($selected_social_icons as $key => $value) {
 	 	$social_icons_names[] = $key;	 
-	 } 
+	 }
 	 if($selected_social_icons['twitter'] == null){
 	 	$selected_social_icons['twitter'] = 'https://twitter.com/intent/tweet?url='. $url.'&text='. $title .' ';
 	 	//https://twitter.com/intent/tweet?url={url}&text={title}&via={via}&hashtags={hashtags}
