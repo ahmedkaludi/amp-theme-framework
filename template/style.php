@@ -3,49 +3,19 @@ function ampforwp_custom_style() {
 	global $redux_builder_amp;
 	$get_customizer = new AMP_Post_Template( $post_id );
 ?>
-/********************************************
-    AMP Theme Framework Stylesheet 
-*********************************************/
-    body {
-		font-family: sans-serif;
-		font-size: 18px;
-		line-height:1.4;
-    }
-    p,
-    ol,
-    ul,
-    figure {
-        margin: 0 0 1em;
-        padding: 0;
-    }
-    a, a:active, a:visited {
-        color:#ed1c24;  
-        text-decoration: none 
-    }
-    a:hover,
-    a:active,
-    a:focus {
-    }
-    pre {
-        white-space: pre-wrap;
-    }
+/**** 
+* AMP Framework Reset
+*****/
+    body{ font-family: sans-serif; font-size: 16px; line-height:1.4; }
+    p, ol, ul, figure{ margin: 0 0 1em; padding: 0; }
+    a, a:active, a:visited{ color:#ed1c24; text-decoration: none }
+    a:hover, a:active, a:focus{}
+    pre{ white-space: pre-wrap;}
     .hidden{ display:none }
     .clearfix{ clear:both }
-    blockquote {
-        background: rgba(127,127,127,.125);
-        margin: 8px 0 24px 0;
-        padding: 16px;
-    }
-    blockquote p:last-child {
-        margin-bottom: 0;
-    }
-    .amp-wp-enforced-sizes {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-    .amp-wp-unknown-size img {
-        object-fit: contain;
-    }
+    blockquote {background: rgba(127,127,127,.125);margin: 8px 0 24px 0;padding: 15px;}
+    blockquote p:last-child {margin-bottom: 0;}
+    .amp-wp-unknown-size img {object-fit: contain;}
 
     /* Image Alignment */
     .alignright {
@@ -60,9 +30,6 @@ function ampforwp_custom_style() {
         margin-right: auto;
     }
     amp-iframe { max-width: 100%; margin-bottom : 20px; }
-
- 
-
 
     /* Captions */
     .wp-caption {
@@ -87,14 +54,22 @@ function ampforwp_custom_style() {
         object-fit: contain;
     }
 
-/* Nav open button */
-	.toggle-text  {
-		position: absolute;
-		right: 0;
+
+/****
+* AMP Sidebar
+*****/
+    amp-sidebar {
+        width: 250px;
+    }
+
+    /* AMP Sidebar Toggle button */
+    .amp-sidebar-toggle  {
+        position: absolute;
+        right: 0;
         height: 22px;
         width: 28px;
-	}
-	.toggle-text span  {
+    }
+    .amp-sidebar-toggle span  {
         display: block;
         position: absolute;
         height: 2px;
@@ -104,37 +79,48 @@ function ampforwp_custom_style() {
         opacity: 1;
         left: 0;
     }
-    .toggle-text span:nth-child(2){
+    .amp-sidebar-toggle span:nth-child(2){
         top: 7px;
     }
-    .toggle-text span:nth-child(3){
+    .amp-sidebar-toggle span:nth-child(3){
         top:14px;
     }
 
- 
-	 
 
-     /* Post Nagivation */
-    .amp-post-navigation{
-    }
-    .amp-post-navigation .next {
+/****
+* AMP Navigation Menu with Dropdown Support
+*****/
+    .toggle-navigation ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
         display: inline-block;
-        float: right
+        width: 100%
     }
-    .amp-post-navigation .prev {
-        display: inline-block;
+    .toggle-navigation ul li{
+        font-size: 13px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+        padding: 11px 0px;
+        width: 25%;
+        float: left;
+        text-align: center;
+        margin-top: 6px
     }
- 
+    .toggle-navigation ul ul{
+        display: none
+    }
+    .toggle-navigation ul li a{
+        color: #eee;
+        padding: 15px;
+    }
+    .toggle-navigation{
+        display: none;
+        background: #444;
+    }
 
-/*** 
+/**** 
 * AMP Comments
-***/
-    .comments_list{
-        margin: 2.5em 16px 2.5em
-    }
-	.comments_list div{
-	    display:inline-block;
-	}
+*****/
 	.comments_list ul{
 	    margin:0;
 	    padding:0
@@ -167,50 +153,13 @@ function ampforwp_custom_style() {
 	}
 	.comment-author{ float:left }
 
+/**** 
+* Custom CSS
+*****/
+    <?php echo $redux_builder_amp['css_editor']; ?>
 
-/*** 
-* AMP Sidebar
-***/
-amp-sidebar {
-    width: 250px;
-}
-
-
-/** 
-* AMP Navigation Menu with Dropdown Support
-**/
-.toggle-navigation ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    width: 100%
-}
-.toggle-navigation ul li{
-    font-size: 13px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.11);
-    padding: 11px 0px;
-    width: 25%;
-    float: left;
-    text-align: center;
-    margin-top: 6px
-}
-.toggle-navigation ul ul{
-    display: none
-}
-.toggle-navigation ul li a{
-    color: #eee;
-    padding: 15px;
-}
-.toggle-navigation{
-    display: none;
-    background: #444;
-}
-
-    <?php  // Custom CSS Editor from Options panel
-    echo $redux_builder_amp['css_editor']; ?>
-
-    <?php // RTL Language CSS
-    if( is_rtl() ) { ?>
-    <?php } ?>
+/**** 
+* RTL Styles
+*****/
+    <?php  if( is_rtl() ) {?> <?php } ?>
 <?php } ?>

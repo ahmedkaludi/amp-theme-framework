@@ -46,7 +46,7 @@ function sidebar_opening_button($data=array()){
 		$class = $data['class'];
 	}
 	return '<div on="tap:'.$id.'.toggle" role="button" tabindex="0" class="'.$class.'">
-						<a href="#" class="toggle-text">
+						<a href="#" class="amp-sidebar-toggle">
 							<span></span>
 							<span></span>
 							<span></span>
