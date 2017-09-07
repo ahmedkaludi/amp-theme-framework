@@ -1,29 +1,5 @@
 <?php global $redux_builder_amp;  ?>
-<!doctype html>
-<html amp <?php echo AMP_HTML_Utils::build_attributes_string( $this->get( 'html_tag_attributes' ) ); ?>>
-<head>
-	<meta charset="utf-8">
-  <link rel="dns-prefetch" href="https://cdn.ampproject.org">
-	<?php $paged = get_query_var( 'paged' );
-	$current_search_url =trailingslashit(get_home_url())."?s=".get_search_query();
-	$amp_url = untrailingslashit($current_search_url);
-	if ($paged > 1 ) {
-		global $wp;
-		$current_archive_url 	= home_url( $wp->request );
-		$amp_url 				= trailingslashit($current_archive_url);
-		$remove 				= '/'. AMPFORWP_AMP_QUERY_VAR;
-		$amp_url				= str_replace($remove, '', $amp_url) ;
-		$amp_url 				= $amp_url ."?s=".get_search_query();
-	} ?>
-	<link rel="canonical" href="<?php echo $amp_url ?>">
-	<?php do_action( 'amp_post_template_head', $this ); ?>
-	<style amp-custom>
-	<?php $this->load_parts( array( 'style' ) ); 
-	?>
-	<?php do_action( 'amp_post_template_css', $this ); ?>
-	</style>
-</head>
-<body class="amp_home_body archives_body design_3_wrapper">
+<?php amp_header() ?>
 <?php do_action('ampforwp_body_beginning', $this); ?>
 <?php $this->load_parts( array( 'header-bar' ) ); ?>
 

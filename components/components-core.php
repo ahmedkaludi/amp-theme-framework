@@ -185,14 +185,42 @@ function amp_header(){
 	$post_id = get_queried_object_id();
 	$thisTemplate = new AMP_Post_Template($post_id);
 	global $redux_builder_amp;
-	$html_tag_attributes = 'lang="en-US"';//AMP_HTML_Utils::build_attributes_string( $this->get( 'html_tag_attributes' ) );
-	if ( is_home() || is_front_page()  || ( is_archive() && $redux_builder_amp['ampforwp-archive-support'] ) ){
-		    global $wp;
-		    $current_archive_url = home_url( $wp->request );
-		    $amp_url 	= trailingslashit($current_archive_url);
-		    $remove 	= '/'. AMP_QUERY_VAR;
-		    $amp_url 	= str_replace($remove, '', $amp_url) ;
+	$html_tag_attributes = AMP_HTML_Utils::build_attributes_string( $thisTemplate->get( 'html_tag_attributes' ) );
+	
+	$bodyClass = '';
+    if ( is_single() || is_page() ) {
+			$bodyClass = 'single-post';
+			$bodyClass .= ( is_page()? 'amp-single-page' : 'amp-single');
+  		
+	}
+	// Archive
+	if ( is_archive() ) {
+        $bodyClass = 'amp-archive';
+    }
+    $ampforwp_custom_post_page  =  ampforwp_custom_post_page();
+    // Homepage
+	if ( is_home() ) {
+		
+    	$bodyClass = 'amp-index '.esc_attr( $thisTemplate->get( 'body_class' ) ); 
+    	if ($redux_builder_amp['amp-frontpage-select-option'] == 1) {
+			$bodyClass = 'single-post design_3_wrapper';
+        }
+        if ( $ampforwp_custom_post_page == "page" && ampforwp_name_blog_page() ) {
+			$current_url = home_url( $GLOBALS['wp']->request );
+			$current_url_in_pieces = explode( '/', $current_url );
+		
+			if( in_array( ampforwp_name_blog_page() , $current_url_in_pieces )  ) {
+				 $bodyClass = 'amp-index '.esc_attr( $thisTemplate->get( 'body_class' ) ); 
+			}  
 		}
+    
+    }
+    // is_search
+	if ( is_search() ) {
+        if ( 'single' === $type ) {
+            $bodyClass = 'amp_home_body archives_body design_3_wrapper';
+        }
+    }
 	?><!doctype html>
 	<html amp <?php echo AMP_HTML_Utils::build_attributes_string( $thisTemplate->get( 'html_tag_attributes' ) ); ?>>
 		<head>
@@ -201,20 +229,13 @@ function amp_header(){
 		    <link rel="dns-prefetch" href="https://cdn.ampproject.org">
 		    <?php do_action( 'amp_post_template_head', $thisTemplate ); ?>
 		<!-- __END__ IF GOOGLE FONT IS AVAILABLE THEN LOAD __END__ -->
-		<?php global $redux_builder_amp;
-		if ( is_home() || is_front_page()  || ( is_archive() && $redux_builder_amp['ampforwp-archive-support'] ) ){
-		    global $wp;
-		    $current_archive_url = home_url( $wp->request );
-		    $amp_url 	= trailingslashit($current_archive_url);
-		    $remove 	= '/'. AMP_QUERY_VAR;
-		    $amp_url 	= str_replace($remove, '', $amp_url) ;
-		} ?>
+			
 			<style amp-custom>
 				<?php $thisTemplate->load_parts( array( 'style' ) ); ?>
 				<?php do_action( 'amp_post_template_css', $thisTemplate ); ?>
 			</style>
 
 		</head>
-		<body class="amp-index <?php echo esc_attr( $thisTemplate->get( 'body_class' ) ); ?>">
+		<body class="<?php echo $bodyClass; ?>">
 <?php
 }

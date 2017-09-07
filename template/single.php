@@ -1,20 +1,5 @@
 <?php global $redux_builder_amp;  ?>
-<!doctype html>
-<html amp>
-<head>
-	<meta charset="utf-8">
-    <link rel="dns-prefetch" href="https://cdn.ampproject.org">
-	
-	<?php do_action( 'amp_post_template_head', $this ); ?>
-	<style amp-custom>
-	<?php $this->load_parts( array( 'style' ) ); ?>
-	<?php do_action( 'amp_post_template_css', $this ); ?>
-	</style>
-</head>
-<body class="single-post <?php
-  if( is_page() )   echo 'amp-single-page';
-  else              echo 'amp-single';
-?>">
+<?php amp_header(); ?>
 <?php $this->load_parts( array( 'header-bar' ) ); ?>
 <?php do_action( 'ampforwp_after_header', $this ); ?>
 	<main>
