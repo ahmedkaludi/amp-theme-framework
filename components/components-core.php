@@ -265,3 +265,27 @@ function amp_loop_template(){
 
 	 $thisTemplate->load_parts( array( 'loop' ) ); 
 }
+
+function amp_content(){ 
+global $redux_builder_amp, $post;
+$post_id = get_queried_object_id();
+if(is_home() && $redux_builder_amp['amp-frontpage-select-option'] == 1){
+			$post_id = $redux_builder_amp['amp-frontpage-select-option-pages'];
+	}
+$thisTemplate = new AMP_Post_Template($post_id);
+	 ?>
+	<div>
+	    <?php do_action('ampforwp_before_post_content'); 
+		$amp_custom_content_enable = get_post_meta( $thisTemplate->get( 'post_id' ) , 'ampforwp_custom_content_editor_checkbox', true);
+		// Normal Content
+		if ( ! $amp_custom_content_enable ) {
+				$ampforwp_the_content = $thisTemplate->get( 'post_amp_content' ); // amphtml content; no kses
+			} else {
+				// Custom/Alternative AMP content added through post meta  
+				$ampforwp_the_content = $thisTemplate->get( 'ampforwp_amp_content' );
+			} 
+		$ampforwp_the_content = apply_filters('ampforwp_content_filter',$ampforwp_the_content);
+		echo $ampforwp_the_content;
+    	do_action('ampforwp_after_post_content'); ?>
+	</div>
+<?php }
