@@ -38,7 +38,7 @@ if($startCustomTemplateEngine){
 	// Custom Header
 	function ampforwp_custom_header_file( $file, $type ) {
 		if ( 'header' === $type ) {
-			$file = AMPFORWP_CUSTOM_THEME . '/template/header.php';
+			$file = AMPFORWP_CUSTOM_THEME . '/header.php';
 		}
 		return $file;
 	}
@@ -48,34 +48,34 @@ if($startCustomTemplateEngine){
 		// Single file
 	    if ( is_single() || is_page() ) {
 			if('single' === $type && !('product' === $post->post_type )) {
-				$file = AMPFORWP_CUSTOM_THEME . '/template/single.php';
+				$file = AMPFORWP_CUSTOM_THEME . '/single.php';
 		 	}
 		}
 	    // Loop Template
 	    if ( 'loop' === $type ) {
-			$file = AMPFORWP_CUSTOM_THEME . '/template/loop.php';
+			$file = AMPFORWP_CUSTOM_THEME . '/loop.php';
 		}
 	    // Archive
 		if ( is_archive() ) {
 	        if ( 'single' === $type ) {
-	            $file = AMPFORWP_CUSTOM_THEME . '/template/archive.php';
+	            $file = AMPFORWP_CUSTOM_THEME . '/archive.php';
 	        }
 	    }
 	    $ampforwp_custom_post_page  =  ampforwp_custom_post_page();
 	    // Homepage
 		if ( is_home() ) {
 			if ( 'single' === $type ) {
-	        	$file = AMPFORWP_CUSTOM_THEME . '/template/index.php';
+	        	$file = AMPFORWP_CUSTOM_THEME . '/index.php';
 	        
 		        if ($redux_builder_amp['amp-frontpage-select-option'] == 1) {
-					$file = AMPFORWP_CUSTOM_THEME . '/template/page.php';
+					$file = AMPFORWP_CUSTOM_THEME . '/page.php';
 		        }
 		        if ( $ampforwp_custom_post_page == "page" && ampforwp_name_blog_page() ) {
 					$current_url = home_url( $GLOBALS['wp']->request );
 					$current_url_in_pieces = explode( '/', $current_url );
 				
 					if( in_array( ampforwp_name_blog_page() , $current_url_in_pieces )  ) {
-						 $file = AMPFORWP_CUSTOM_THEME . '/template/index.php';
+						 $file = AMPFORWP_CUSTOM_THEME . '/index.php';
 					}  
 				}
 		    }
@@ -83,7 +83,7 @@ if($startCustomTemplateEngine){
 	    // is_search
 		if ( is_search() ) {
 	        if ( 'single' === $type ) {
-	            $file = AMPFORWP_CUSTOM_THEME . '/template/search.php';
+	            $file = AMPFORWP_CUSTOM_THEME . '/search.php';
 	        }
 	    }
 	    
@@ -93,7 +93,7 @@ if($startCustomTemplateEngine){
 	// Custom Footer
 	function ampforwp_custom_footer_file($file, $type ){
 		if ( 'footer' === $type ) {
-			$file = AMPFORWP_CUSTOM_THEME . '/template/footer.php';
+			$file = AMPFORWP_CUSTOM_THEME . '/footer.php';
 		}
 		return $file;
 	}
@@ -107,5 +107,5 @@ if($startCustomTemplateEngine){
 	<?php }
 
 	// Loading Core Styles 
-	require_once( AMPFORWP_CUSTOM_THEME . '/template/style.php' );
+	require_once( AMPFORWP_CUSTOM_THEME . '/style.php' );
 }
