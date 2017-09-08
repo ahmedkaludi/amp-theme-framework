@@ -181,12 +181,13 @@ function ampforwp_custom_style() {
 	.comment-author{ float:left }
 
 /**** 
-* Custom CSS
-*****/
-    <?php echo $redux_builder_amp['css_editor']; ?>
-
-/**** 
 * RTL Styles
 *****/
     <?php  if( is_rtl() ) {?> <?php } ?>
+
+/**** 
+* Custom CSS
+*****/
+<?php echo $redux_builder_amp['css_editor']; ?>
+
 <?php } ?>
