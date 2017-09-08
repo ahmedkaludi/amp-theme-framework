@@ -2,7 +2,7 @@
 function ampforwp_framework_get_post_navigation(){
 	global $redux_builder_amp;
 	if($redux_builder_amp['enable-single-next-prev']) { ?>
-		<div class="amp-post-navigation">
+		<div id="pagination">
 					<div class="next">
 						<?php $next_post = get_next_post();
 							if (!empty( $next_post )) {
