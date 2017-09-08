@@ -269,6 +269,7 @@ function amp_footer(){
 	do_action( 'amp_post_template_above_footer', $thisTemplate );
 	$thisTemplate->load_parts( array( 'footer' ) );
 	do_action( 'amp_post_template_footer', $thisTemplate );
+	do_action('ampforwp_global_after_footer');
 	?></body>
 	</html><?php
 }

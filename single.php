@@ -1,4 +1,3 @@
-<?php global $redux_builder_amp;  ?>
 <?php amp_header(); ?>
 	<main>
 		<article>
