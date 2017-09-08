@@ -8,4 +8,4 @@
           ?>
 </footer>
 <?php do_action('ampforwp_global_after_footer');
-/* TODO: Check ampforwp_global_after_footer hook, it contains search functions which have amp-lightbox, we need to check and remove it.
+/* TODO: Check ampforwp_global_after_footer hook, it contains search functions which have amp-lightbox, we need to check and remove it.*/
