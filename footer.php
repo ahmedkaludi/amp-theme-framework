@@ -1,4 +1,3 @@
-</div> <!-- .amp-wrapper -->
 <footer class="footer container">
         <?php
           global $allowed_html;

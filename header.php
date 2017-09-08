@@ -20,5 +20,3 @@
 <?php amp_search();?>
 <?php amp_social(); ?> 
 <?php amp_sidebar(['action'=>'end']); ?>
-
-<div class="content-wrapper container">
