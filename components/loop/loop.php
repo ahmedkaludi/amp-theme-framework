@@ -27,14 +27,26 @@ function call_loops_standard($data=array()){
 	
 	if ( is_archive() ) {
 		$exclude_ids = get_option('ampforwp_exclude_post');
-		$args = array(
+		$qobj = get_queried_object();
+		$args =  array(
 			'post_type'           => 'post',
 			'orderby'             => 'date',
+			'ignore_sticky_posts' => 1,
+			'tax_query' => array(
+					        array(
+					          'taxonomy' => $qobj->taxonomy,
+					          'field' => 'id',
+					          'terms' => $qobj->term_id,
+					    //    using a slug is also possible
+					    //    'field' => 'slug', 
+					    //    'terms' => $qobj->name
+					        )
+					        ),
 			'paged'               => esc_attr($paged),
 			'post__not_in' 		  => $exclude_ids,
-			'has_password' 		  => false ,
-			'post_status'		  => 'publish'
-		);
+			'has_password' => false ,
+			'post_status'=> 'publish'
+		  );
 		$filtered_args = apply_filters('ampforwp_query_args', $args);
 		$amp_q = new WP_Query( $filtered_args );
 	}
