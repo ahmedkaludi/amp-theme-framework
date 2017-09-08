@@ -17,16 +17,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 if(!defined('AMPFORWP_CUSTOM_THEME')){
 	define('AMPFORWP_CUSTOM_THEME', plugin_dir_path( __FILE__ )); 
 }
-if(!defined('AMP_FRAMEWORK_COMOPNENT_DIR_PATH')){
-	define('AMP_FRAMEWORK_COMOPNENT_DIR_PATH', plugin_dir_path( __FILE__ )."/components"); 
-}
 
-require_once( AMP_FRAMEWORK_COMOPNENT_DIR_PATH . '/components-core.php' );
-
-
+//Check if this theme is selected in design manager
 global $startCustomTemplateEngine; 
 if($startCustomTemplateEngine){
 	require_once( AMPFORWP_CUSTOM_THEME . '/functions.php' );
+	//Filter the Template files to override previous ones
 	add_filter( 'amp_post_template_file', 'ampforwp_custom_header_file', 10, 2 );
 	add_filter( 'amp_post_template_file', 'ampforwp_designing_custom_template', 10, 3 );
 	add_filter( 'amp_post_template_file', 'ampforwp_custom_footer_file', 10, 2 );
