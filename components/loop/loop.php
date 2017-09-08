@@ -24,10 +24,7 @@ function call_loops_standard($data=array()){
 	} else {
 	    $paged = 1;
 	}
-
-	if ( is_single() || is_page() ) {
-
-	}
+	
 	if ( is_archive() ) {
 		$exclude_ids = get_option('ampforwp_exclude_post');
 		$args = array(
@@ -185,9 +182,9 @@ function call_loops_standard($data=array()){
 
 	function amp_loop_permalink($return,$amp_query_var ='amp'){
 		if($return){
-			return trailingslashit( get_permalink() ) . AMPFORWP_AMP_QUERY_VAR ;
+			return user_trailingslashit(trailingslashit( get_permalink() ) . AMPFORWP_AMP_QUERY_VAR) ;
 		}
-		echo trailingslashit( get_permalink() ) . AMPFORWP_AMP_QUERY_VAR ;
+		echo user_trailingslashit(trailingslashit( get_permalink() ) . AMPFORWP_AMP_QUERY_VAR) ;
 	}
 	function amp_loop_image($data=array()){
 		global $ampLoopData,$counterOffset;
