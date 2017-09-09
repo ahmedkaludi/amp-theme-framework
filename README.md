@@ -1,4 +1,4 @@
-# amp-theme-framework
+# AMP Theme Framework
 AMP Theme Framework - Create themes on AMP.
 
 ## How to Create theme for AMP
