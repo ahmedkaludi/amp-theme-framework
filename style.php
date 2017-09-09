@@ -1,8 +1,3 @@
-<?php add_action('amp_post_template_css', 'ampforwp_custom_style', 11);
-function ampforwp_custom_style() {  
-	global $redux_builder_amp;
-	$get_customizer = new AMP_Post_Template( $post_id );
-?>
 /**** 
 * AMP Framework Reset
 *****/
@@ -184,10 +179,3 @@ function ampforwp_custom_style() {
 * RTL Styles
 *****/
     <?php  if( is_rtl() ) {?> <?php } ?>
-
-/**** 
-* Custom CSS
-*****/
-<?php echo $redux_builder_amp['css_editor']; ?>
-
-<?php } ?>
