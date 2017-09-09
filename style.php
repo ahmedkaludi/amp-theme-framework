@@ -89,6 +89,14 @@
         top:14px;
     }
 
+    /* AMP Sidebar close button */
+    .amp-sidebar-close{
+        background: #333;
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 12px;
+        color: #fff;
+    }
 
 /****
 * AMP Navigation Menu with Dropdown Support
@@ -137,8 +145,8 @@
     .amp-phone{
         top: 4px;
     }
-    .amp-social{
-        margin: 0px 12px;
+    .header .amp-social{
+        margin: 0px 19px;
     }
     .amp-sidebar-button{
         top: 6px;
@@ -184,6 +192,20 @@
 /****
 * Single
 *****/
+    /** Related Posts **/
+    .amp-related-posts ul{
+        list-style-type:none;
+    }
+    .amp-related-posts ul li{
+        display: inline-block;
+        line-height: 1.3;
+        margin-bottom: 5px;
+    }
+    .amp-related-posts amp-img{
+        float: left;
+        width: 100px;
+        margin: 0px 10px 0px 0px;
+    }
 
 
 /**** 
