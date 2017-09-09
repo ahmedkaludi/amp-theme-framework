@@ -7,13 +7,14 @@
     a, a:active, a:visited{ color:#ed1c24; text-decoration: none }
     a:hover, a:active, a:focus{}
     pre{ white-space: pre-wrap;}
+    .left{float:left}
+    .right{float:right}
     .hidden{ display:none }
     .clearfix{ clear:both }
     blockquote{ background: #f1f1f1; margin: 10px 0 20px 0; padding: 15px;}
     blockquote p:last-child {margin-bottom: 0;}
     .amp-wp-unknown-size img {object-fit: contain;}
     .amp-wp-enforced-sizes{ max-width: 100% }
-
     /* Image Alignment */
     .alignright {
         float: right;
@@ -58,6 +59,7 @@
 .container {
     max-width: 600px;
     margin: 0 auto;
+    padding: 0px 10px;
 }
 
 /****
@@ -69,7 +71,7 @@
 
     /* AMP Sidebar Toggle button */
     .amp-sidebar-button{
-        position:relative
+        position:relative;
     }
     .amp-sidebar-toggle  {
     }
@@ -121,21 +123,65 @@
 
 
 /**** 
-* Loop
+* Header
 *****/
-.loop-wrapper .loop-img{
-    float: left;
-    margin-right: 15px;
-}
-.loop-category{
-    list-style-type:none
-}
-.loop-category li{
-    display:inline;
-    margin-right:1px;
-}
+    .header h1{
+        font-size: 1.5em;
+    }
+    .header .right{
+        margin: 16px 5px 0px 5px;
+    }
+    .amp-phone, .amp-social, .amp-sidebar-button{
+        display:inline-flex 
+    }
+    .amp-phone{
+        top: 4px;
+    }
+    .amp-social{
+        margin: 0px 12px;
+    }
+    .amp-sidebar-button{
+        top: 6px;
+    }
+
 
 /**** 
+* Loop
+*****/
+    .loop-post{
+        display: inline-block;
+        width: 100%;
+        margin: 6px 0px;
+    }
+    .loop-post .loop-img{
+        float: left;
+        margin-right: 15px;
+    }
+    .loop-post h2{
+        font-size: 1.2em;
+        margin: 0px 0px 8px 0px;
+    }
+    .loop-post p{
+        font-size: 14px;
+        color: #333;
+        margin-bottom:6px;
+    }
+    .loop-post ul{
+        list-style-type: none;
+        display: inline-flex;
+        margin: 0px;
+        font-size: 14px;
+        color: #666;
+    }
+    .loop-post ul li{
+        margin-right:2px;
+    }
+    .loop-date{
+        font-size:12px;
+    }
+
+
+/****
 * Single
 *****/
 
@@ -175,7 +221,18 @@
 	}
 	.comment-author{ float:left }
 
+
 /**** 
+* Footer
+*****/
+    .footer{
+        padding: 30px 0px 20px 0px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+
+/****
 * RTL Styles
 *****/
     <?php  if( is_rtl() ) {?> <?php } ?>
