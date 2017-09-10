@@ -1,4 +1,7 @@
 # AMP Theme Framework
+
+[logo]: https://ampforwp.com/wp-content/uploads/2017/09/amp-theme-framework-logo.png "AMP Theme Framework"
+
 AMP Theme Framework - Create themes on AMP. https://ampforwp.com/amp-theme-framework/
 
 ## How to Create theme for AMP
