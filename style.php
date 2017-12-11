@@ -133,6 +133,10 @@
 /**** 
 * Header
 *****/
+.amp-logo {
+    width:190px;
+    height:36px;
+}
     .header h1{
         font-size: 1.5em;
     }
